@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import com.xhpp.foodpenguin.MainActivity;
 import com.xhpp.foodpenguin.R;
 import com.xhpp.foodpenguin.ui.register.RegisterActivity;
 
@@ -21,6 +22,13 @@ public class LoginActivity extends AppCompatActivity {
     public void forgetPassword(View view)
     {
 
+    }
+
+    public void login(View view)
+    {
+        Intent intent = new Intent(this , MainActivity.class);
+        startActivity(intent);
+        finish();
     }
 
     public void signUp(View view)

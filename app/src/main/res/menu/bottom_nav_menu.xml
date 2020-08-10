@@ -12,7 +12,7 @@
         android:title="@string/cart" />
 
     <item
-        android:id="@+id/penguin"
+        android:id="@+id/main"
         android:icon="@drawable/ic_penguin"
         android:title="@string/main" />
 
