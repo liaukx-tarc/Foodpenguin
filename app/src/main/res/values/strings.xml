@@ -7,4 +7,10 @@
     <string name="main">Main</string>
     <string name="wallet">Wallet</string>
     <string name="account">Account</string>
+    <string name="username_hint">Username</string>
+    <string name="password_hint">Password</string>
+    <string name="forget_password_text">Forget Password?</string>
+    <string name="login_text">LOGIN</string>
+    <string name="signUp_ques_text">Don\'t have an account?</string>
+    <string name="signUp_text">Sign Up</string>
 </resources>

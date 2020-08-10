@@ -6,6 +6,8 @@ import android.os.Handler;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.xhpp.foodpenguin.ui.login.LoginActivity;
+
 
 public class SplashScreen extends AppCompatActivity {
 
