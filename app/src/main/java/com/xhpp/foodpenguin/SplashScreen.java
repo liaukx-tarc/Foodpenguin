@@ -6,6 +6,8 @@ import android.os.Handler;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.xhpp.foodpenguin.ui.login.LoginActivity;
+
 
 public class SplashScreen extends AppCompatActivity {
 
@@ -19,6 +21,7 @@ public class SplashScreen extends AppCompatActivity {
         new Handler().postDelayed(new Runnable(){
             @Override
             public void run() {
+                //if want to check change the MainActivity.class to your checking class.
                 Intent intent = new Intent(SplashScreen.this , MainActivity.class);
                 SplashScreen.this.startActivity(intent);
                 SplashScreen.this.finish();
