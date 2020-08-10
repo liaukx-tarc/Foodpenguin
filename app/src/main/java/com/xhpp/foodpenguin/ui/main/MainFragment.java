@@ -1,4 +1,4 @@
-package com.xhpp.foodpenguin.ui.penguin;
+package com.xhpp.foodpenguin.ui.main;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -14,15 +14,15 @@ import androidx.lifecycle.ViewModelProviders;
 
 import com.xhpp.foodpenguin.R;
 
-public class PenguinFragment extends Fragment {
+public class MainFragment extends Fragment {
 
-    private PenguinViewModel penguinViewModel;
+    private MainViewModel mainViewModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,@Nullable Bundle savedInstanceState) {
-        penguinViewModel = ViewModelProviders.of(this).get(PenguinViewModel.class);
-        View view = inflater.inflate(R.layout.fragment_penguin, container, false);
+        mainViewModel = ViewModelProviders.of(this).get(MainViewModel.class);
+        View view = inflater.inflate(R.layout.fragment_main, container, false);
         final TextView penguin = view.findViewById(R.id.text_penguin);
-        penguinViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
+        mainViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
             public void onChanged(String s) {
                 penguin.setText(s);

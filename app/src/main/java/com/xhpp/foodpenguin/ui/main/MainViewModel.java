@@ -1,14 +1,14 @@
-package com.xhpp.foodpenguin.ui.penguin;
+package com.xhpp.foodpenguin.ui.main;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class PenguinViewModel extends ViewModel {
+public class MainViewModel extends ViewModel {
 
     private MutableLiveData<String> mText;
 
-    public PenguinViewModel() {
+    public MainViewModel() {
         mText = new MutableLiveData<>();
         mText.setValue("Main");
     }

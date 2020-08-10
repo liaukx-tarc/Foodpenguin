@@ -19,9 +19,9 @@
 
     <fragment
         android:id="@+id/main"
-        android:name="com.xhpp.foodpenguin.ui.penguin.PenguinFragment"
+        android:name="com.xhpp.foodpenguin.ui.main.MainFragment"
         android:label="@string/main"
-        tools:layout="@layout/fragment_penguin"/>
+        tools:layout="@layout/fragment_main"/>
 
     <fragment
         android:id="@+id/wallet"
