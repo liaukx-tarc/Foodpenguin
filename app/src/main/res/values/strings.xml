@@ -1,8 +1,10 @@
 <resources>
     <string name="app_name">Foodpenguin</string>
-    <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
     <string name="logo_food_text">FOOD</string>
     <string name="logo_penguin_text">PENGUIN</string>
+    <string name="promotion">Promotion</string>
+    <string name="cart">Cart</string>
+    <string name="main">Main</string>
+    <string name="wallet">Wallet</string>
+    <string name="account">Account</string>
 </resources>

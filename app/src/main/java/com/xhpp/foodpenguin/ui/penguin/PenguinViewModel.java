@@ -1,16 +1,16 @@
-package com.xhpp.foodpenguin.ui.notifications;
+package com.xhpp.foodpenguin.ui.penguin;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class NotificationsViewModel extends ViewModel {
+public class PenguinViewModel extends ViewModel {
 
     private MutableLiveData<String> mText;
 
-    public NotificationsViewModel() {
+    public PenguinViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is notifications fragment");
+        mText.setValue("Main");
     }
 
     public LiveData<String> getText() {

@@ -3,23 +3,35 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/navigation_home">
+    app:startDestination="@+id/promotion">
 
     <fragment
-        android:id="@+id/navigation_home"
-        android:name="com.xhpp.foodpenguin.ui.home.HomeFragment"
-        android:label="@string/title_home"
-        tools:layout="@layout/fragment_home" />
+        android:id="@+id/promotion"
+        android:name="com.xhpp.foodpenguin.ui.promotion.PromotionFragment"
+        android:label="@string/promotion"
+        tools:layout="@layout/fragment_promotion" />
 
     <fragment
-        android:id="@+id/navigation_dashboard"
-        android:name="com.xhpp.foodpenguin.ui.dashboard.DashboardFragment"
-        android:label="@string/title_dashboard"
-        tools:layout="@layout/fragment_dashboard" />
+        android:id="@+id/cart"
+        android:name="com.xhpp.foodpenguin.ui.cart.CartFragment"
+        android:label="@string/cart"
+        tools:layout="@layout/fragment_cart" />
 
     <fragment
-        android:id="@+id/navigation_notifications"
-        android:name="com.xhpp.foodpenguin.ui.notifications.NotificationsFragment"
-        android:label="@string/title_notifications"
-        tools:layout="@layout/fragment_notifications" />
+        android:id="@+id/main"
+        android:name="com.xhpp.foodpenguin.ui.penguin.PenguinFragment"
+        android:label="@string/main"
+        tools:layout="@layout/fragment_penguin"/>
+
+    <fragment
+        android:id="@+id/wallet"
+        android:name="com.xhpp.foodpenguin.ui.wallet.WalletFragment"
+        android:label="@string/wallet"
+        tools:layout="@layout/fragment_wallet" />
+
+    <fragment
+        android:id="@+id/account"
+        android:name="com.xhpp.foodpenguin.ui.account.AccountFragment"
+        android:label="@string/account"
+        tools:layout="@layout/fragment_account" />
 </navigation>
