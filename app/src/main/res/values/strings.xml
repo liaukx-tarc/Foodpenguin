@@ -18,4 +18,10 @@
     <string name="send_text">SEND</string>
     <string name="forget_pass_1">Please enter your Username</string>
     <string name="forget_pass_2">We will send a verification code to your registered phone</string>
+    <string name="phone_number_hint">Phone Number</string>
+    <string name="verification_hint">Verification</string>
+    <string name="retype_password_hint">Retype Password</string>
+    <string name="create_account_text">CREATE ACCOUNT</string>
+    <string name="sign_in_ques_text">Already have an account?</string>
+    <string name="sign_in_text">Sign In</string>
 </resources>
