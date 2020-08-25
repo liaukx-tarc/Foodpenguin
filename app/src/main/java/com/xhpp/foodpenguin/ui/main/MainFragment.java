@@ -25,41 +25,17 @@ public class MainFragment extends Fragment
 
 
     SearchView mySearchView;
+    ListView myListView;
 
 
 
 
     private MainViewModel mainViewModel;
 
-    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,@Nullable Bundle savedInstanceState) {
-        mainViewModel = ViewModelProviders.of(this).get(MainViewModel.class);
-        View view = inflater.inflate(R.layout.fragment_main, container, false);
-        final TextView penguin = view.findViewById(R.id.text_penguin);
-        mainViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
-            @Override
-            public void onChanged(String s) {
-                penguin.setText(s);
-            }
-        });
-
-        ArrayList<String> list = new ArrayList<>();
-        list.add("Monday");
-        list.add("Tuesday");
-        list.add("Wednesday");
-        list.add("Thursday");
-        list.add("Friday");
-        list.add("Saturday");
-        list.add("Sunday");
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getContext(),android.R.layout.simple_list_item_1,list);
+    public View onCreateView() {
 
 
-        ListView myList = (ListView) view.findViewById(R.id.myList);
-        myList.setAdapter(adapter);
 
-
-        //endOfListing
-
-        return view ;
-    }
+    };
 
 }
