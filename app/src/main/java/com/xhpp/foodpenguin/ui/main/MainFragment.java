@@ -22,25 +22,11 @@ import java.util.ArrayList;
 
 public class MainFragment extends Fragment
 {
-
-
     SearchView mySearchView;
-
-
-
-
     private MainViewModel mainViewModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,@Nullable Bundle savedInstanceState) {
-        mainViewModel = ViewModelProviders.of(this).get(MainViewModel.class);
         View view = inflater.inflate(R.layout.fragment_main, container, false);
-        final TextView penguin = view.findViewById(R.id.text_penguin);
-        mainViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
-            @Override
-            public void onChanged(String s) {
-                penguin.setText(s);
-            }
-        });
 
         ArrayList<String> list = new ArrayList<>();
         list.add("Monday");
@@ -51,7 +37,6 @@ public class MainFragment extends Fragment
         list.add("Saturday");
         list.add("Sunday");
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(getContext(),android.R.layout.simple_list_item_1,list);
-
 
         ListView myList = (ListView) view.findViewById(R.id.myList);
         myList.setAdapter(adapter);
