@@ -3,7 +3,7 @@ package com.xhpp.foodpenguin;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.Toast;
-
+import android.widget.SearchView;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import androidx.annotation.NonNull;
@@ -14,6 +14,10 @@ import androidx.navigation.NavDestination;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
+
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -28,5 +32,4 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupWithNavController(navView, navController);
         navView.setSelectedItemId(R.id.main);
     }
-
 }
