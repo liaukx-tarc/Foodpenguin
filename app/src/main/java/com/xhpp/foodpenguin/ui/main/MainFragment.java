@@ -20,10 +20,14 @@ import java.util.ArrayList;
 public class MainFragment extends Fragment
 {
     SearchView mySearchView;
-    private MainViewModel mainViewModel;
+    ListView myList;
+
 
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,@Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_main, container, false);
+
+        mySearchView = (SearchView)view.findViewById(R.id.searchView);
+        myList = (ListView)view.findViewById(R.id.myList);
 
         ArrayList<String> list = new ArrayList<>();
         list.add("Monday");
@@ -33,13 +37,22 @@ public class MainFragment extends Fragment
         list.add("Friday");
         list.add("Saturday");
         list.add("Sunday");
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getContext(),android.R.layout.simple_list_item_1,list);
-
-        ListView myList = (ListView) view.findViewById(R.id.myList);
+        final ArrayAdapter<String> adapter = new ArrayAdapter<String>(getContext(),android.R.layout.simple_list_item_1,list);
         myList.setAdapter(adapter);
 
+        mySearchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String s) {
+                return false;
+            }
 
-        //endOfListing
+            @Override
+            public boolean onQueryTextChange(String s) {
+
+                adapter.getFilter().filter(s);
+                return false;
+            }
+        });
 
         return view ;
     }
