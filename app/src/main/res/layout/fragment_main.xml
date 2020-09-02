@@ -7,58 +7,26 @@
     android:background="@color/colorBackground2"
     tools:context=".ui.main.MainFragment">
 
-
-    <SearchView
-        android:id="@+id/searchView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:iconifiedByDefault="false"
-        android:queryHint="Search here"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"></SearchView>
-
     <RelativeLayout
-        android:id="@+id/relativeLayout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintTop_toBottomOf="@+id/searchView"
-        tools:layout_editor_absoluteX="0dp">
-
+        android:layout_height="match_parent">
+        <SearchView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:queryHint="Search here"
+            android:iconifiedByDefault="false"
+            android:id="@+id/searchView">
+        </SearchView>
 
         <ListView
             android:id="@+id/myList"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="633dp"
+            android:layout_below="@+id/searchView"
             android:layout_marginTop="-4dp"
             android:layout_marginBottom="-2dp">
-
         </ListView>
-
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:src="@drawable/mcd"/>
-
-        <TextView
-            android:id="@+id/restaurants"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_toEndOf="@id/imageView"
-            android:layout_toRightOf="@id/imageView"
-            android:textSize="22dp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/desc"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/restaurants"
-            android:layout_toEndOf="@id/imageView"
-            android:layout_toRightOf="@id/imageView"
-            android:paddingLeft="5dp" />
-
     </RelativeLayout>
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
