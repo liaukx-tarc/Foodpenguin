@@ -24,6 +24,14 @@ public class AccountFragment extends Fragment{
     {
          accountViewModel = ViewModelProviders.of(this).get(AccountViewModel.class);
         View view = inflater.inflate(R.layout.fragment_account,container,false);
+
+        final TextView account = view.findViewById(R.id.text_account);
+        accountViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
+            @Override
+            public void onChanged(String s) {
+                account .setText(s);
+            }
+        });
         return view;
     }
 
