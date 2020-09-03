@@ -31,4 +31,11 @@
     <string name="address">Address</string>
     <string name="my_order">My Order</string>
     <string name="log_out">Log Out</string>
+    <string name="penguin_wallet">Penguin Wallet</string>
+    <string name="topup_hint">Enter Your Top Up Value</string>
+    <string name="top_up_button">Top Up</string>
+    <string name="wallet_discount_msg">Enjoy additional discount using Penguin Wallet !</string>
+    <string name="top_up_method">Top Up Method</string>
+    <string name="cards">Cards</string>
+    <string name="online_banking">Online Banking</string>
 </resources>
