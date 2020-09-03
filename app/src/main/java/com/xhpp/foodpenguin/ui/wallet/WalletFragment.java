@@ -26,13 +26,6 @@ public class WalletFragment extends Fragment {
         walletViewModel = ViewModelProviders.of(this).get(WalletViewModel.class);
         View view = inflater.inflate(R.layout.fragment_wallet,container,false);
 
-        final TextView wallet = view.findViewById(R.id.text_wallet);
-        walletViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
-            @Override
-            public void onChanged(String s) {
-                wallet.setText(s);
-            }
-        });
         return view;
     }
 
