@@ -4,12 +4,16 @@ public class Users {
     private String username;
     private String password;
     private String phone;
+    private String email;
+    private String address;
+    private String fname;
 
-    public Users(String username, String password, String phone)
+    public Users(String username, String password, String phone, String email)
     {
         this.username = username;
         this.password = password;
-        this.phone = phone ;
+        this.phone = phone;
+        this.email = email;
     }
 
     public Users()
@@ -29,6 +33,18 @@ public class Users {
         this.phone = phone;
     }
 
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public void setFname(String fname) {
+        this.fname = fname;
+    }
+
     public String getUsername() {
         return username;
     }
@@ -39,5 +55,17 @@ public class Users {
 
     public String getPhone() {
         return phone;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public String getFname() {
+        return fname;
     }
 }

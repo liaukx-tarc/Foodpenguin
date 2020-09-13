@@ -207,12 +207,12 @@ public class RegisterActivity extends AppCompatActivity {
                 public void onComplete(@NonNull Task<AuthResult> task) {
                     if (task.isSuccessful())
                     {
-                        Toast.makeText(RegisterActivity.this, "Register Successful", Toast.LENGTH_SHORT).show();
                         String UserId = fAuth.getCurrentUser().getUid();
 
-                        Users users = new Users(username,password,phone);
+                        Users users = new Users(username,password,phone,email);
                         DocumentReference documentReference = db.collection("users").document(UserId);
                         documentReference.set(users);
+                        Toast.makeText(RegisterActivity.this, "Register Successful", Toast.LENGTH_SHORT).show();
 
                         Intent intent = new Intent(RegisterActivity.this,LoginActivity.class);
                         RegisterActivity.this.startActivity(intent);
