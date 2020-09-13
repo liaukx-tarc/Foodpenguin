@@ -1,10 +1,13 @@
 package com.xhpp.foodpenguin;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Toast;
 import android.widget.SearchView;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.xhpp.foodpenguin.ui.main.MainFragment;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -30,6 +33,11 @@ public class MainActivity extends AppCompatActivity {
         // menu should be considered as top level destinations.
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         NavigationUI.setupWithNavController(navView, navController);
+        navView.setSelectedItemId(R.id.main);
+    }
+
+    public void mainMenu(View view) {
+        BottomNavigationView navView = findViewById(R.id.nav_view);
         navView.setSelectedItemId(R.id.main);
     }
 }
