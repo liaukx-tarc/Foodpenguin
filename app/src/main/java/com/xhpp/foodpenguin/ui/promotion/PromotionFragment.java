@@ -15,7 +15,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.xhpp.foodpenguin.R;
-import com.xhpp.foodpenguin.ui.main.RestaurantAdapter;
+import com.xhpp.foodpenguin.ui.promotion.PromotionAdapter;
 
 import java.util.ArrayList;
 
