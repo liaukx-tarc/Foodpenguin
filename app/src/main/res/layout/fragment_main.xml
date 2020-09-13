@@ -7,26 +7,32 @@
     android:background="@color/colorBackground2"
     tools:context=".ui.main.MainFragment">
 
+
+
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-        <SearchView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:queryHint="Search here"
-            android:iconifiedByDefault="false"
-            android:id="@+id/searchView">
-        </SearchView>
 
-        <ListView
-            android:id="@+id/myList"
-            android:layout_width="match_parent"
-            android:layout_height="633dp"
-            android:layout_below="@+id/searchView"
-            android:layout_marginTop="-4dp"
-            android:layout_marginBottom="-2dp">
-        </ListView>
-    </RelativeLayout>
+
+
+    <SearchView
+        android:id="@+id/searchView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:iconifiedByDefault="false"
+        android:queryHint="Search here"></SearchView>
+
+
+    <ListView
+                android:id="@+id/listView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/searchView"
+                android:layout_marginTop="-4dp"
+                android:layout_marginBottom="-2dp"></ListView>
+    </RelativeLayout>>
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

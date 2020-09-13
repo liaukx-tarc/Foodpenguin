@@ -21,13 +21,7 @@ public class PromotionFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,@Nullable Bundle savedInstanceState) {
         promotionViewModel = ViewModelProviders.of(this).get(PromotionViewModel.class);
         View view = inflater.inflate(R.layout.fragment_promotion, container, false);
-        final TextView promotion = view.findViewById(R.id.text_promotion);
-        promotionViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
-            @Override
-            public void onChanged(String s) {
-                promotion.setText(s);
-            }
-        });
+
         return view;
     }
 }
