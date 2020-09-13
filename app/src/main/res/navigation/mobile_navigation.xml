@@ -3,12 +3,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/promotion">
+    app:startDestination="@+id/promotionAdapter">
 
     <fragment
-        android:id="@+id/promotion"
-        android:name="com.xhpp.foodpenguin.ui.promotion.PromotionFragment"
-        android:label="@string/promotion"
+        android:id="@+id/promotionAdapter"
+        android:name="com.xhpp.foodpenguin.ui.promotionAdapter.PromotionFragment"
+        android:label="@string/promotionAdapter"
         tools:layout="@layout/fragment_promotion" />
 
     <fragment

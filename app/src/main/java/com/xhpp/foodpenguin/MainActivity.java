@@ -1,6 +1,7 @@
 package com.xhpp.foodpenguin;
 
 import android.os.Bundle;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 import android.widget.SearchView;
@@ -32,4 +33,12 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupWithNavController(navView, navController);
         navView.setSelectedItemId(R.id.main);
     }
+
+//    @Override
+//    public boolean onCreateOptionsMenu(Menu menu) {
+//        getMenuInflater().inflate(R.menu.foodmenu_navbar,menu);
+//        MenuItem menuItem = menu.findItem(R.id.searchView);
+//        SearchView searchView = (SearchView) menuItem.getActionView();
+//        return super.onCreateOptionsMenu(menu);
+//    }
 }

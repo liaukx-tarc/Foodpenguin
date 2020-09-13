@@ -1,5 +1,4 @@
 package com.xhpp.foodpenguin.ui.main;
-
         import android.content.Context;
         import android.view.LayoutInflater;
         import android.view.View;
@@ -7,7 +6,6 @@ package com.xhpp.foodpenguin.ui.main;
         import android.widget.ArrayAdapter;
         import android.widget.ImageView;
         import android.widget.TextView;
-
         import androidx.annotation.NonNull;
         import androidx.annotation.Nullable;
         import com.xhpp.foodpenguin.R;
@@ -17,6 +15,15 @@ package com.xhpp.foodpenguin.ui.main;
 public class RestaurantAdapter extends ArrayAdapter<Restaurant> {
     private Context mContext;
     private int mResource;
+
+    ArrayList <Restaurant> arrayList;
+
+    public void update(ArrayList<Restaurant> results)
+    {
+        arrayList = new ArrayList<>();
+        arrayList.addAll(results);
+        notifyDataSetChanged();
+    }
 
     public RestaurantAdapter(@NonNull Context context, int resource, @NonNull ArrayList<Restaurant> objects) {
         super(context, resource, objects);

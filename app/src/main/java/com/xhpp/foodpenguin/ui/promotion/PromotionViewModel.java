@@ -10,7 +10,7 @@ public class PromotionViewModel extends ViewModel {
 
     public PromotionViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("Promotion");
+        mText.setValue("PromotionAdapter");
     }
 
     public LiveData<String> getText() {

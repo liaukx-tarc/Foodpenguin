@@ -2,23 +2,24 @@ package com.xhpp.foodpenguin.ui.main;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.SearchView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import com.xhpp.foodpenguin.R;
-
 import java.util.ArrayList;
-
 
 public class MainFragment extends Fragment
 {
     SearchView mySearchView;
     ListView myList;
+    ArrayList <Restaurant> arrayList= new ArrayList<>();
 
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,@Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_main, container, false);
@@ -28,7 +29,7 @@ public class MainFragment extends Fragment
         myList = view.findViewById(R.id.listView);
 
 
-        ArrayList <Restaurant> arrayList= new ArrayList<>();
+        final ArrayList <Restaurant> arrayList= new ArrayList<>();
 
         arrayList.add(new Restaurant(R.drawable.mcd,"McDonalds", "Fast Food"));
         arrayList.add(new Restaurant(R.drawable.kfc,"KFC", "Fast Food"));
@@ -39,24 +40,20 @@ public class MainFragment extends Fragment
         arrayList.add(new Restaurant(R.drawable.wendy,"Wendy's", "Fast Food"));
 
         final RestaurantAdapter restaurantAdapter = new RestaurantAdapter(getContext(),R.layout.list_row,arrayList);
-        myList.setAdapter(restaurantAdapter);
-
-//        List<String> list = new ArrayList<>();
-//        list.add("McDonalds");
-//        list.add("KFC");
-//        list.add("Burger King");
-//        list.add("Pizza Hut");
-//        list.add("Domino's Pizza");
-//        list.add("A&W");
-//        list.add("Wendy's");
-//
-//
-//
-//        final ArrayAdapter<String> adapter = new ArrayAdapter<String>(getContext(),android.R.layout.simple_list_item_1,list);
-//        myList.setAdapter(adapter);
+        myList.setAdapter(new RestaurantAdapter(getContext(),R.layout.list_row,arrayList));
 
 
-        //searchBar
+         return view ;
+    }
+
+    //searchbar
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        setHasOptionsMenu(true);
+        inflater.inflate(R.menu.search_bar, menu);
+        MenuItem menuItem = menu.findItem(R.id.searchView);
+        SearchView searchView = (SearchView) menuItem.getActionView();
+            //searchBar
         mySearchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String s) {
@@ -65,13 +62,18 @@ public class MainFragment extends Fragment
 
             @Override
             public boolean onQueryTextChange(String s) {
-
-                restaurantAdapter.getFilter().filter(s);
+                ArrayList <Restaurant> results=new ArrayList<>();
+                for(Restaurant x: arrayList)
+                {
+                    if(x.Name.contains(s))
+                        results.add(x);
+                }
+                ((RestaurantAdapter)myList.getAdapter()).update(results);
                 return false;
             }
         });
-
-         return view ;
+        super.onCreateOptionsMenu(menu, inflater);
     }
 
 }
+
