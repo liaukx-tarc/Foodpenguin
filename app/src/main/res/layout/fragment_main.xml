@@ -31,7 +31,7 @@
                 android:layout_below="@+id/searchView"
                 android:layout_marginTop="-4dp"
                 android:layout_marginBottom="-2dp"></ListView>
-    </RelativeLayout>>
+    </RelativeLayout>
 
 
 

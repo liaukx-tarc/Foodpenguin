@@ -35,6 +35,7 @@ public class MainFragment extends Fragment
         arrayList.add(new Restaurant(R.drawable.burgerking,"Burger King", "Fast Food"));
         arrayList.add(new Restaurant(R.drawable.domino,"Domino's Pizza", "Fast Food"));
         arrayList.add(new Restaurant(R.drawable.aandw,"A&W", "Fast Food"));
+        arrayList.add(new Restaurant(R.drawable.pizzahut,"Pizza Hut", "Fast Food"));
         arrayList.add(new Restaurant(R.drawable.wendy,"Wendy's", "Fast Food"));
 
         final RestaurantAdapter restaurantAdapter = new RestaurantAdapter(getContext(),R.layout.list_row,arrayList);

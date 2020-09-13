@@ -31,7 +31,7 @@ public class RestaurantAdapter extends ArrayAdapter<Restaurant> {
 
         convertView = layoutInflater.inflate(mResource,parent,false);
 
-        ImageView imageView = convertView.findViewById(R.id.image);
+        ImageView imageView = convertView.findViewById(R.id.imageView);
 
         TextView textView = convertView.findViewById(R.id.textView);
 
