@@ -1,5 +1,6 @@
 package com.xhpp.foodpenguin.ui.account;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
@@ -9,6 +10,7 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -23,7 +25,14 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.FirebaseFirestoreException;
+import com.google.firebase.firestore.SetOptions;
+import com.google.firebase.firestore.Transaction;
 import com.xhpp.foodpenguin.R;
+import com.xhpp.foodpenguin.ui.login.LoginActivity;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class AccountFragment extends Fragment{
 
@@ -83,12 +92,12 @@ public class AccountFragment extends Fragment{
 
         if (fAuth.getCurrentUser() != null)
         {
-            setData();
+            getData();
         }
         return view;
     }
 
-    private void setData()
+    private void getData()
     {
         String UserId = fAuth.getCurrentUser().getUid();
         DocumentReference documentReference = db.collection("users").document(UserId);
@@ -123,16 +132,14 @@ public class AccountFragment extends Fragment{
         String phonePattern = "^(\\d{3,4}[- .]?)(\\d{3}[- .]?)\\d{4}$";
         if(TextUtils.isEmpty(phoneNum))   //check empty phone
         {
-            phoneText.setError("Can't Empty");
+            phoneText.setError("Phone Number Cannot be Blank");
             return false;
         }
-
         else if(!phoneNum.matches(phonePattern))
         {
-            phoneText.setError("Invalid Phone");
+            phoneText.setError("Invalid Phone Number Format");
             return false;
         }
-
         else
         {
             return true;
@@ -155,26 +162,71 @@ public class AccountFragment extends Fragment{
                     editButton.setVisibility(View.VISIBLE);
                     cancelButton.setVisibility(View.GONE);
                     saveButton.setVisibility(View.GONE);
+                    fnameText.setError(null);
+                    phoneText.setError(null);
+                    addressText.setError(null);
+                    fnameText.setErrorEnabled(false);
+                    phoneText.setErrorEnabled(false);
+                    addressText.setErrorEnabled(false);
                     fnameText.setEnabled(false);
                     phoneText.setEnabled(false);
                     addressText.setEnabled(false);
+                    fnameText.getEditText().setText(fname);
+                    phoneText.getEditText().setText(phoneNum);
+                    addressText.getEditText().setText(address);
+                    fnameText.setError(null);
                     break;
                 case R.id.save:
-                    editButton.setVisibility(View.VISIBLE);
-                    cancelButton.setVisibility(View.GONE);
-                    saveButton.setVisibility(View.GONE);
-                    fnameText.setEnabled(false);
-                    phoneText.setEnabled(false);
-                    addressText.setEnabled(false);
+                    String fnameEdit = fnameText.getEditText().getText().toString();
+                    String phoneNumEdit = phoneText.getEditText().getText().toString();
+                    String addressEdit = addressText.getEditText().getText().toString();
+                    if(TextUtils.isEmpty(fnameEdit))
+                    {
+                        fnameText.setError("Name Cannot be Blank");
+                    }
+                    else if(TextUtils.isEmpty(addressEdit))
+                    {
+                        addressText.setError("Address Cannot be Blank");
+                    }
+                    else if(phoneCheck(phoneNumEdit))
+                    {
+                        editButton.setVisibility(View.VISIBLE);
+                        cancelButton.setVisibility(View.GONE);
+                        saveButton.setVisibility(View.GONE);
+                        fnameText.setEnabled(false);
+                        phoneText.setEnabled(false);
+                        addressText.setEnabled(false);
+                        setData();
+                    }
                     break;
                 case R.id.my_order:
                     // do stuff
                     break;
                 case R.id.logout:
-                    // do stuff
+                    fAuth.signOut();
+                    Intent intent = new Intent (AccountFragment.this.getActivity(), LoginActivity.class);
+                    startActivity(intent);
+                    Toast.makeText(AccountFragment.this.getActivity(),"Log Out Successfully", Toast.LENGTH_SHORT);
                     break;
             }
         }
     };
+
+    private void setData()
+    {
+        String UserId = fAuth.getCurrentUser().getUid();
+        final DocumentReference documentReference = db.collection("users").document(UserId);
+
+        String fnameEdit = fnameText.getEditText().getText().toString();
+        String phoneNumEdit = phoneText.getEditText().getText().toString();
+        String addressEdit = addressText.getEditText().getText().toString();
+
+        Map<String, Object> data = new HashMap<>();
+            data.put("fname", fnameEdit);
+            data.put("phone", phoneNumEdit);
+            data.put("address", addressEdit);
+
+        documentReference.set(data, SetOptions.merge());
+    }
 }
 
