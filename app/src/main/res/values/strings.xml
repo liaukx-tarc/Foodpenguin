@@ -29,7 +29,7 @@
     <string name="phone_number">Phone Number</string>
     <string name="email">E-mail</string>
     <string name="address">Address</string>
-    <string name="my_order">My Order</string>
+    <string name="my_order">My Orders</string>
     <string name="log_out">Log Out</string>
     <string name="penguin_wallet">Penguin Wallet</string>
     <string name="topup_hint">Enter Your Top Up Value</string>
@@ -38,4 +38,5 @@
     <string name="top_up_method">Top Up Method</string>
     <string name="cards">Cards</string>
     <string name="online_banking">Online Banking</string>
+    <string name="orders">Orders</string>
 </resources>
