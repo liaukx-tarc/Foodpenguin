@@ -65,7 +65,7 @@
                 android:layout_height="30dp"
                 android:layout_marginLeft="36dp"
                 android:gravity="left"
-                android:text="10.50"
+                android:text="0.00"
                 android:textColor="@color/colorPrimaryDark"
                 android:textSize="24sp"
                 android:textStyle="bold"
