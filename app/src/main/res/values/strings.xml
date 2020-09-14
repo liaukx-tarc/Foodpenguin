@@ -36,11 +36,5 @@
     <string name="top_up_button">Top Up</string>
     <string name="wallet_discount_msg">Enjoy additional discount using Penguin Wallet !</string>
     <string name="top_up_method">Top Up Method</string>
-    <string name="cards">Cards</string>
-    <string name="online_banking">Online Banking</string>
-    <string name="checkout_card"><![CDATA[Cards\nVisa & Mastercard]]></string>
-    <string-array name="ifNotAvailable_array">
-        <item>Cancel this product</item>
-        <item>Change product by call</item>
-    </string-array>
+
 </resources>
