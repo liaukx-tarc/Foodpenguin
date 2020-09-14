@@ -18,9 +18,7 @@ public class FoodInfoActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.mcd_menu);
-
-        mcdList = findViewById(R.id.mcdfood);
+        setContentView(R.layout.fragment_main);
 
 
 //        ArrayList<Mcdonals> foodlist = new ArrayList<>();

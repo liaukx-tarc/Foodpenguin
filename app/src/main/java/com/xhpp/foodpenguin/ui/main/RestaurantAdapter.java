@@ -7,6 +7,7 @@ package com.xhpp.foodpenguin.ui.main;
         import android.widget.ImageView;
         import android.widget.TextView;
         import androidx.annotation.NonNull;
+        import androidx.fragment.app.Fragment;
         import androidx.recyclerview.widget.RecyclerView;
         import com.xhpp.foodpenguin.R;
         import java.util.ArrayList;
@@ -69,11 +70,21 @@ public class RestaurantAdapter extends RecyclerView.Adapter<RestaurantAdapter.Re
 
     @Override
     public void onBindViewHolder(@NonNull RestaurantViewHolder holder, int position) {
-        Restaurant restaurant = arrayList.get(position);
+        final Restaurant restaurant = arrayList.get(position);
 
         holder.mImageView.setImageResource(restaurant.getImageResource());
         holder.mTextView1.setText(restaurant.getText1());
         holder.mTextView2.setText(restaurant.getText2());
+        holder.mImageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                fragmentJump(restaurant);
+            }
+        });
+    }
+
+    private void fragmentJump(Restaurant restaurant) {
+        mFragnment = new Fragment()
     }
 
     @Override
@@ -125,12 +136,13 @@ public class RestaurantAdapter extends RecyclerView.Adapter<RestaurantAdapter.Re
         }
     };
 
-        public void update(ArrayList<Restaurant> results)
-    {
-        arrayList = new ArrayList<>();
-        arrayList.addAll(results);
-        notifyDataSetChanged();
-    }
+
+//        public void update(ArrayList<Restaurant> results)
+//    {
+//        arrayList = new ArrayList<>();
+//        arrayList.addAll(results);
+//        notifyDataSetChanged();
+//    }
 
 //    public RestaurantAdapter(@NonNull Context context, int resource, @NonNull ArrayList<Restaurant> objects) {
 //        super(context, resource, objects);
