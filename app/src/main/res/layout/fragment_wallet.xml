@@ -176,7 +176,7 @@
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/topup_value"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="60dp"
         android:layout_marginTop="20dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
@@ -206,7 +206,7 @@
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/topup_value" />
+        app:layout_constraintTop_toBottomOf="@+id/topup_value"/>
 
 
 

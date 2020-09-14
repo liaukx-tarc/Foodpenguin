@@ -208,7 +208,7 @@ public class AccountFragment extends Fragment{
                     fAuth.signOut();
                     Intent intent2 = new Intent (AccountFragment.this.getActivity(), LoginActivity.class);
                     startActivity(intent2);
-                    Toast.makeText(AccountFragment.this.getActivity(),"Log Out Successfully", Toast.LENGTH_SHORT);
+                    Toast.makeText(getActivity(),"Log Out Successfully", Toast.LENGTH_SHORT).show();
                     break;
             }
         }
