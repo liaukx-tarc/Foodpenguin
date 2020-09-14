@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#F8F6F6"
-    tools:context=".ui.checkout.checkout_fragment">
+    tools:context=".ui.checkout.checkout_Fragment">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
@@ -111,6 +111,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <RadioGroup
+        android:id="@+id/payment_method"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"

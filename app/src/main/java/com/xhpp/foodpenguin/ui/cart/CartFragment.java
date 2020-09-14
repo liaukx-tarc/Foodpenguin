@@ -1,6 +1,5 @@
 package com.xhpp.foodpenguin.ui.cart;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -21,7 +20,7 @@ import java.util.Calendar;
 
 import com.xhpp.foodpenguin.R;
 import com.xhpp.foodpenguin.ui.food_info.food_info_Fragment;
-import com.xhpp.foodpenguin.ui.checkout.checkout_fragment;
+import com.xhpp.foodpenguin.ui.checkout.checkout_Fragment;
 
 public class CartFragment extends Fragment  implements View.OnClickListener{
 
@@ -69,7 +68,7 @@ public class CartFragment extends Fragment  implements View.OnClickListener{
                 break;
 
             case R.id.checkout_button:
-                checkout_fragment checkout_fragment = new checkout_fragment();
+                checkout_Fragment checkout_fragment = new checkout_Fragment();
                 FragmentManager fragmentManager2 = getFragmentManager();
                 FragmentTransaction fragmentTransaction2 = fragmentManager2.beginTransaction();
                 fragmentTransaction2.replace(((ViewGroup)getView().getParent()).getId(), checkout_fragment);
@@ -78,7 +77,6 @@ public class CartFragment extends Fragment  implements View.OnClickListener{
                 break;
         }
     }
-
 
 
 }

@@ -86,7 +86,9 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Food Size"/>
+                    android:text="Size"
+                    app:layout_constraintTop_toTopOf="@+id/size"
+                    app:layout_constraintStart_toStartOf="@+id/size"/>
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -103,7 +105,9 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Food drink"/>
+                    android:text="Drink"
+                    app:layout_constraintTop_toTopOf="@+id/drink"
+                    app:layout_constraintStart_toStartOf="@+id/drink"/>
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -120,7 +124,9 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Food add-on"/>
+                    android:text="Add_on"
+                    app:layout_constraintTop_toTopOf="@+id/add_on"
+                    app:layout_constraintStart_toStartOf="@+id/add_on"/>
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -163,17 +169,19 @@
                 android:id="@+id/ifNotAvailable">
 
                 <TextView
+                    android:id="@+id/ifNotAvailableText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="If this product not available"
                     app:layout_constraintTop_toTopOf="@+id/ifNotAvailable"/>
 
                 <Spinner
-                    android:layout_width="200dp"
+                    android:id="@+id/ifNotAvailableSpinner"
+                    android:layout_width="250dp"
                     android:layout_height="30dp"
-                    app:layout_constraintTop_toBottomOf="@+id/ifNotAvailable"
-                    app:layout_constraintStart_toStartOf="@+id/ifNotAvailable"
-                    android:id="@+id/ifNotAvailableSpinner"/>
+                    tools:layout_editor_absoluteY="298dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/ifNotAvailableText"/>
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -193,7 +201,7 @@
         app:layout_constraintEnd_toStartOf="@+id/addCart"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <TextView
+    <Button
         android:id="@+id/addCart"
         android:layout_width="204dp"
         android:layout_height="30dp"
@@ -208,5 +216,7 @@
         app:layout_constraintBottom_toTopOf="@+id/nav_view"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/total" />
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
