@@ -42,4 +42,8 @@
     <string name="current_order">Current Order</string>
     <string name="recent_orders">Recent Orders</string>
     <string name="order_thanks">Thank you for your order !</string>
+    <string name="arriving">Arriving</string>
+    <string name="picking_up">Picking-up</string>
+    <string name="preparing">Preparing</string>
+    <string name="receiving">Receiving</string>
 </resources>
