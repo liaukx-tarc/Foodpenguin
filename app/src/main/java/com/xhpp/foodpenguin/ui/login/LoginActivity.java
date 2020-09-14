@@ -12,6 +12,8 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
@@ -24,6 +26,7 @@ import com.xhpp.foodpenguin.MainActivity;
 import com.xhpp.foodpenguin.R;
 import com.xhpp.foodpenguin.ui.Users;
 import com.xhpp.foodpenguin.ui.account.AccountFragment;
+import com.xhpp.foodpenguin.ui.forgetPassword.ForgetPassword;
 import com.xhpp.foodpenguin.ui.register.RegisterActivity;
 
 import java.util.regex.Pattern;
@@ -51,11 +54,6 @@ public class LoginActivity extends AppCompatActivity {
             LoginActivity.this.startActivity(intent);
             finish();
         }
-    }
-
-    public void forgetPassword(View view)
-    {
-
     }
 
     //email Validation
@@ -155,6 +153,13 @@ public class LoginActivity extends AppCompatActivity {
         {
             Toast.makeText(LoginActivity.this,"Please Correct field!", Toast.LENGTH_SHORT);
         }
+    }
+
+    public void forgetPassword(View view)
+    {
+        Intent intent =  new Intent(this, ForgetPassword.class);
+        startActivity(intent);
+        finish();
     }
 
     public void signUp(View view)
