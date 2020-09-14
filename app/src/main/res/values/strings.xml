@@ -39,4 +39,7 @@
     <string name="cards">Cards</string>
     <string name="online_banking">Online Banking</string>
     <string name="orders">Orders</string>
+    <string name="current_order">Current Order</string>
+    <string name="recent_orders">Recent Orders</string>
+    <string name="order_thanks">Thank you for your order !</string>
 </resources>

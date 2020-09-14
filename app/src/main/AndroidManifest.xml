@@ -33,7 +33,6 @@
 
         <activity android:name=".ui.food_info.FoodInfoActivity" />
 
-        <activity android:name=".ui.order.OrderActivity" />
 
     </application>
 
