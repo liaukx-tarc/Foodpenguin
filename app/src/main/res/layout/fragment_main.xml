@@ -10,20 +10,23 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-    <SearchView
-        android:id="@+id/searchView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:iconifiedByDefault="false"
-        android:queryHint="Search here"></SearchView>
+
+        <SearchView
+            android:id="@+id/searchView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:iconifiedByDefault="false"
+            android:queryHint="Search here"></SearchView>
+
         <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycleView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:padding="4dp"
             android:background="@android:color/darker_gray"
+            android:padding="4dp"
             android:scrollbars="vertical"
-            android:id="@+id/recycleView"></androidx.recyclerview.widget.RecyclerView>
-<!--    <ListView-->
+            android:layout_below="@id/searchView"></androidx.recyclerview.widget.RecyclerView>
+        <!--    <ListView-->
 <!--                android:id="@+id/listView"-->
 <!--                android:layout_width="match_parent"-->
 <!--                android:layout_height="match_parent"-->

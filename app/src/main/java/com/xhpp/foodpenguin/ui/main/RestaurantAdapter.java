@@ -2,18 +2,24 @@ package com.xhpp.foodpenguin.ui.main;
         import android.view.LayoutInflater;
         import android.view.View;
         import android.view.ViewGroup;
+        import android.widget.Filter;
+        import android.widget.Filterable;
         import android.widget.ImageView;
         import android.widget.TextView;
         import androidx.annotation.NonNull;
         import androidx.recyclerview.widget.RecyclerView;
         import com.xhpp.foodpenguin.R;
         import java.util.ArrayList;
+        import java.util.List;
 
 
-public class RestaurantAdapter extends RecyclerView.Adapter<RestaurantAdapter.RestaurantViewHolder> {
+public class RestaurantAdapter extends RecyclerView.Adapter<RestaurantAdapter.RestaurantViewHolder> implements Filterable {
     private ArrayList <Restaurant> arrayList;
+    private ArrayList<Restaurant> searchlist;
 
     private OnItemClickListener mListener;
+
+
     public interface OnItemClickListener{
         void onItemClick(int position);
     };
@@ -50,7 +56,8 @@ public class RestaurantAdapter extends RecyclerView.Adapter<RestaurantAdapter.Re
     }
 
     public RestaurantAdapter(ArrayList<Restaurant> exampleList) {
-        arrayList = exampleList;
+        this.arrayList = exampleList;
+        searchlist = new ArrayList<>(exampleList);
     }
 
     @Override
@@ -74,6 +81,49 @@ public class RestaurantAdapter extends RecyclerView.Adapter<RestaurantAdapter.Re
 
         return arrayList.size();
     }
+
+    @Override
+    public Filter getFilter() {
+        return exampleFilter;
+    }
+
+    private Filter exampleFilter = new Filter()
+    {
+        @Override
+        protected FilterResults performFiltering(CharSequence charSequence) {
+
+            List<Restaurant> filteredList = new ArrayList<>();
+
+            if(charSequence == null || charSequence.length() ==0)
+            {
+                filteredList.addAll(searchlist);
+            }
+            else
+            {
+                String word = charSequence.toString().toLowerCase().trim();
+
+                for(Restaurant x:searchlist)
+                {
+                    if(x.getText1().toLowerCase().contains(word))
+                    {
+                        filteredList.add(x);
+                    }
+                }
+            }
+
+            FilterResults results = new FilterResults();
+            results.values = filteredList;
+
+            return results;
+        }
+
+        @Override
+        protected void publishResults(CharSequence charSequence, FilterResults results) {
+            arrayList.clear();
+            searchlist.addAll((List)results.values);
+            notifyDataSetChanged();
+        }
+    };
 
         public void update(ArrayList<Restaurant> results)
     {
