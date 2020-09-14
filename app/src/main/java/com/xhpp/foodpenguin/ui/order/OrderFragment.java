@@ -20,8 +20,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.firestore.DocumentReference;
-import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
@@ -52,12 +50,12 @@ public class OrderFragment extends Fragment {
     int order_status;
     boolean has_order;
 
+    TextView orderStatusText;
     TextView status1;
     TextView status2;
     TextView status3;
     TextView status4;
     TextView estimateTime;
-    int currentStatus;
     int estimateMin;
     String estimateTimeString;
 
@@ -96,12 +94,12 @@ public class OrderFragment extends Fragment {
         recentOrderDetail.setItemAnimator(new DefaultItemAnimator());
         recentOrderDetail.setAdapter((orderAdapter));
 
+        orderStatusText = view.findViewById(R.id.orderStatusText);
         status1 = view.findViewById(R.id.status1);
         status2 = view.findViewById(R.id.status2);
         status3 = view.findViewById(R.id.status3);
         status4 = view.findViewById(R.id.status4);
 
-        currentStatus = 0;
         estimateMin = 0;
         order_status = 0;
         estimateTime = view.findViewById(R.id.estimatedTime);
@@ -111,7 +109,8 @@ public class OrderFragment extends Fragment {
         return view;
     }
 
-    private void getData() {
+    private void getData()
+    {
         final String UserId = fAuth.getCurrentUser().getUid();
 
         db.collection("orders")
@@ -125,7 +124,6 @@ public class OrderFragment extends Fragment {
                             for (QueryDocumentSnapshot document : task.getResult())
                             {
                                 order_statusDB = document.getDouble("order_status").intValue();
-
                                 if(order_statusDB == 5)
                                 {
                                     idDB = document.getId();
@@ -135,49 +133,15 @@ public class OrderFragment extends Fragment {
                                     Order order = new Order(uidDB, idDB, shop_nameDB, dateDB, total_priceDB);
                                     orderList.add(order);
                                 }
-                                else if(order_statusDB > 0 && order_statusDB < 5)
+                                else
                                 {
-                                    Toast.makeText(getActivity(),String.valueOf(order_statusDB), Toast.LENGTH_SHORT).show();
-                                  has_order = true;
-                                  order_status = order_statusDB;
+                                    orderStatusText.setText(String.valueOf(order_statusDB));
                                 }
                             }
                         }
                     }
                 });
-
-
-        if(has_order)
-        {
-            currentStatus = order_status;
-            Toast.makeText(getActivity(),"2", Toast.LENGTH_SHORT).show();
-            switch(order_status)
-            {
-                case 1:
-                    status1.setBackgroundResource(R.drawable.circle_blue);
-                    currentStatus = 1;
-                    estimateMin = 20;
-                    break;
-                case 2:
-                    status2.setBackgroundResource(R.drawable.circle_blue);
-                    currentStatus = 2;
-                    estimateMin = 15;
-                    break;
-                case 3:
-                    status3.setBackgroundResource(R.drawable.circle_blue);
-                    currentStatus = 3;
-                    estimateMin = 10;
-                    break;
-                case 4:
-                    status4.setBackgroundResource(R.drawable.circle_blue);
-                    currentStatus = 4;
-                    estimateMin = 5;
-                    break;
-            }
-            estimateTimeString = (estimateMin +" Min");
-            estimateTime.setText(estimateTimeString);
-        }
-        }
+    }
 
     private final View.OnClickListener pListener = new View.OnClickListener() {
         public void onClick(View view) {
@@ -194,9 +158,41 @@ public class OrderFragment extends Fragment {
                 case R.id.downButton:
                     curUpButton.setVisibility(View.VISIBLE);
                     curDownButton.setVisibility(View.GONE);
+                    order_status = Integer.parseInt(orderStatusText.getText().toString());
+                    if (order_status > 0 && order_status < 5)
+                    {
+                        has_order = true;
+                    }
                     if(has_order)
                     {
                         currentOrderContainer.setVisibility(View.VISIBLE);
+                        switch(order_status)
+                        {
+                            case 1:
+                                status1.setBackgroundResource(R.drawable.circle_blue);
+                                estimateMin = 20;
+                                break;
+                            case 2:
+                                status1.setBackgroundResource(R.drawable.circle_blue);
+                                status2.setBackgroundResource(R.drawable.circle_blue);
+                                estimateMin = 15;
+                                break;
+                            case 3:
+                                status1.setBackgroundResource(R.drawable.circle_blue);
+                                status2.setBackgroundResource(R.drawable.circle_blue);
+                                status3.setBackgroundResource(R.drawable.circle_blue);
+                                estimateMin = 10;
+                                break;
+                            case 4:
+                                status1.setBackgroundResource(R.drawable.circle_blue);
+                                status2.setBackgroundResource(R.drawable.circle_blue);
+                                status3.setBackgroundResource(R.drawable.circle_blue);
+                                status4.setBackgroundResource(R.drawable.circle_blue);
+                                estimateMin = 5;
+                                break;
+                        }
+                        estimateTimeString = (estimateMin +" MIN");
+                        estimateTime.setText(estimateTimeString);
                     }
                     break;
                 case R.id.upButtonRecent:
@@ -212,59 +208,6 @@ public class OrderFragment extends Fragment {
             }
         }
     };
-
-    final Runnable updateOrder = new Runnable() {
-        public void run() {
-            getData();
-            if(has_order)
-            {
-                order_status = currentStatus - 1;
-                switch(order_status)
-                {
-                    case 1:
-                        if(currentStatus == 0)
-                        {
-                            status1.setBackgroundResource(R.drawable.circle_blue);
-                            currentStatus = 1;
-                            estimateMin = 20;
-                            estimateTime.setText(estimateMin +" Min");
-                        }
-                        break;
-                    case 2:
-                        if(currentStatus == 1)
-                        {
-                            status2.setBackgroundResource(R.drawable.circle_blue);
-                            currentStatus = 2;
-                            estimateMin = 15;
-                            estimateTime.setText(estimateMin +" Min");
-                        }
-                        break;
-                    case 3:
-                        if(currentStatus == 2)
-                        {
-                            status3.setBackgroundResource(R.drawable.circle_blue);
-                            currentStatus = 3;
-                            estimateMin = 10;
-                            estimateTime.setText(estimateMin +" Min");
-                        }
-                        break;
-                    case 4:
-                        if(currentStatus == 3)
-                        {
-                            status4.setBackgroundResource(R.drawable.circle_blue);
-                            currentStatus = 4;
-                            estimateMin = 5;
-                            estimateTime.setText(estimateMin +" Min");
-                        }
-                        break;
-                }
-                handler.postDelayed(this, 10000);
-            }
-            else
-                handler.removeCallbacks(this);
-        }
-    };
-
 }
 
 
