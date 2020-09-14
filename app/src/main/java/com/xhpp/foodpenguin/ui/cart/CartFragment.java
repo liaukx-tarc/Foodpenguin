@@ -25,13 +25,7 @@ public class CartFragment extends Fragment {
         cartViewModel = ViewModelProviders.of(this).get(CartViewModel.class);
         View view = inflater.inflate(R.layout.fragment_cart, container, false);
 
-        final TextView cart = view.findViewById(R.id.text_cart);
-        cartViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
-            @Override
-            public void onChanged(String s) {
-                cart.setText(s);
-            }
-        });
+
         return view;
     }
 }

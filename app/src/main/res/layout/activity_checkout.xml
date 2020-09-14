@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#F8F6F6"
     tools:context=".ui.checkout.CheckoutActivity">
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
@@ -28,9 +29,13 @@
         android:layout_height="match_parent"
         app:defaultNavHost="true"
         app:layout_constraintBottom_toTopOf="@id/nav_view"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
         app:navGraph="@navigation/mobile_navigation" />
 
     <TextView
@@ -60,5 +65,108 @@
         app:layout_constraintBottom_toTopOf="@+id/nav_view"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <RelativeLayout
+        android:id="@+id/checkout_wallet"
+        android:layout_width="400dp"
+        android:layout_height="105dp"
+        android:layout_marginTop="120dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/imageView6"
+            android:layout_width="387dp"
+            android:layout_height="96dp"
+            android:layout_centerInParent="true"
+            android:clickable="true"
+            android:scaleType="centerCrop"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:srcCompat="@drawable/checkout_button_wallet_selector" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="20dip"
+            android:background="#FFFFFF"
+            android:padding="12dip"
+            android:text="Penguin Wallet\nRM 10.50"
+            android:textColor="#3030E6"
+            android:textSize="24sp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/checkout_card"
+        android:layout_width="400dp"
+        android:layout_height="105dp"
+        android:layout_marginTop="40dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/checkout_wallet">
+
+        <ImageView
+            android:id="@+id/imageView7"
+            android:layout_width="387dp"
+            android:layout_height="96dp"
+            android:layout_centerInParent="true"
+            android:clickable="true"
+            android:scaleType="centerCrop"
+            app:srcCompat="@drawable/checkout_button_card_selector" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginEnd="66dp"
+            android:layout_marginRight="66dp"
+            android:layout_marginBottom="20dip"
+            android:background="#FFFFFF"
+            android:padding="12dip"
+            android:text="@string/checkout_card"
+            android:textColor="#3030E6"
+            android:textSize="24sp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/checkout_bank"
+        android:layout_width="400dp"
+        android:layout_height="105dp"
+        android:layout_marginTop="40dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/checkout_card">
+
+        <ImageView
+            android:id="@+id/imageView8"
+            android:layout_width="387dp"
+            android:layout_height="96dp"
+            android:layout_centerInParent="true"
+            android:clickable="true"
+            android:scaleType="centerCrop"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:srcCompat="@drawable/checkout_button_bank_selector" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="20dip"
+            android:background="#FFFFFF"
+            android:padding="12dip"
+            android:text="@string/online_banking"
+            android:textColor="#3030E6"
+            android:textSize="24sp" />
+    </RelativeLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
