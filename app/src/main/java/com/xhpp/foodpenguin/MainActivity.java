@@ -34,11 +34,4 @@ public class MainActivity extends AppCompatActivity {
         navView.setSelectedItemId(R.id.main);
     }
 
-//    @Override
-//    public boolean onCreateOptionsMenu(Menu menu) {
-//        getMenuInflater().inflate(R.menu.foodmenu_navbar,menu);
-//        MenuItem menuItem = menu.findItem(R.id.searchView);
-//        SearchView searchView = (SearchView) menuItem.getActionView();
-//        return super.onCreateOptionsMenu(menu);
-//    }
 }

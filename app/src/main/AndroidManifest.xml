@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_penguin_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
+        <activity android:name=".ui.main.RestaurantMenu"></activity>
         <activity android:name=".SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -24,15 +24,10 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-
         <activity android:name=".ui.login.LoginActivity" />
-
         <activity android:name=".ui.register.RegisterActivity" />
-
-        <activity android:name=".ui.checkout.CheckoutActivity"/>
-
+        <activity android:name=".ui.checkout.CheckoutActivity" />
         <activity android:name=".ui.food_info.FoodInfoActivity" />
-
     </application>
 
 </manifest>

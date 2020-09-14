@@ -22,7 +22,6 @@ public class CartFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater,@NonNull ViewGroup container,@NonNull Bundle savedInstanceState)
     {
-        cartViewModel = ViewModelProviders.of(this).get(CartViewModel.class);
         View view = inflater.inflate(R.layout.fragment_cart, container, false);
 
         final TextView cart = view.findViewById(R.id.text_cart);

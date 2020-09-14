@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
+<!--    <item-->
+<!--        android:id="@+id/foodForAll"-->
+<!--        android:title="@string/food_screen_menu"-->
+<!--        />-->
     <item
         android:id="@+id/promotionAdapter"
         android:icon="@drawable/ic_promotion"

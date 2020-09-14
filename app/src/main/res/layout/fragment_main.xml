@@ -16,13 +16,22 @@
         android:layout_height="wrap_content"
         android:iconifiedByDefault="false"
         android:queryHint="Search here"></SearchView>
-    <ListView
-                android:id="@+id/listView"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_below="@+id/searchView"
-                android:layout_marginTop="-4dp"
-                android:layout_marginBottom="-2dp"></ListView>
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="4dp"
+            android:background="@android:color/darker_gray"
+            android:scrollbars="vertical"
+            android:id="@+id/recycleView"></androidx.recyclerview.widget.RecyclerView>
+<!--    <ListView-->
+<!--                android:id="@+id/listView"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:layout_below="@+id/searchView"-->
+<!--                android:layout_marginTop="-4dp"-->
+<!--                android:layout_marginBottom="-2dp"></ListView>-->
+
+
     </RelativeLayout>
 
 

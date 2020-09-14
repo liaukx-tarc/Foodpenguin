@@ -1,0 +1,382 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.food_info.FoodInfoActivity">
+
+    <FrameLayout
+        android:id="@+id/contentFragment"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/nav_host_fragment" />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="0dp"
+        android:layout_marginEnd="0dp"
+        android:background="?android:attr/windowBackground"
+        app:itemIconTint="@animator/navbar"
+        app:itemTextColor="@animator/navbar"
+        app:labelVisibilityMode="labeled"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:menu="@menu/bottom_nav_menu" />
+
+    <fragment
+        android:id="@+id/nav_host_fragment"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:defaultNavHost="true"
+        app:layout_constraintBottom_toTopOf="@id/nav_view"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:navGraph="@navigation/mobile_navigation" />
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <ImageView
+            android:id="@+id/foodmenu"
+            android:layout_width="278dp"
+            android:layout_height="164dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_gravity="center"
+            android:layout_marginStart="141dp"
+            android:layout_marginLeft="141dp"
+            android:layout_marginTop="29dp"
+            android:scaleType="center"
+            android:src="@drawable/mcd" />
+
+        <TextView
+            android:id="@+id/restaurant_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/foodmenu"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginStart="214dp"
+            android:layout_marginLeft="214dp"
+            android:layout_marginTop="3dp"
+            android:gravity="center|center_vertical"
+            android:text="Mcdonalds"
+            android:textSize="30sp" />
+
+        <RatingBar
+            android:id="@+id/ratingBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/restaurant_name"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginStart="151dp"
+            android:layout_marginLeft="151dp"
+            android:layout_marginTop="2dp"
+            android:foregroundGravity="center"
+            android:numStars="5"
+            android:rating="4.5" />
+
+
+        <ScrollView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/mainfood"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/ratingBar"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginStart="225dp"
+            android:layout_marginLeft="225dp"
+            android:layout_marginTop="1dp"
+            android:text="Main Food"
+            android:textSize="25dp"
+            android:textStyle="bold" />
+
+        //mcd food1
+
+        <ImageView
+            android:id="@+id/mcdfoodimg1"
+            android:layout_width="110dp"
+            android:layout_height="95dp"
+            android:layout_below="@+id/mainfood"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_gravity="center"
+            android:layout_marginStart="-2dp"
+            android:layout_marginLeft="-2dp"
+            android:layout_marginTop="316dp"
+            android:adjustViewBounds="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/mcdfood1" />
+
+        <TextView
+            android:id="@+id/mcdfoodname1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/mainfood"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="19dp"
+            android:layout_marginTop="314dp"
+            android:layout_toRightOf="@id/mcdfoodimg1"
+            android:text="Big Mac"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/mcdfoodinfo1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/mcdfoodname1"
+            android:layout_marginLeft="20dp"
+            android:layout_toRightOf="@id/mcdfoodimg1"
+            android:text="- Two all-beef patties with lettuce, onions, pickles, cheese and special sauce in a toasted sesame seed bun."
+            android:textSize="15dp"
+            android:textStyle="bold" />
+
+        //mcd food2
+
+        <ImageView
+            android:id="@+id/mcdfoodimg2"
+            android:layout_width="98dp"
+            android:layout_height="89dp"
+            android:layout_below="@+id/mcdfoodimg1"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_gravity="center"
+            android:layout_marginStart="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="18dp"
+            android:adjustViewBounds="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/mcdfood2" />
+
+        <TextView
+            android:id="@+id/mcdfoodname2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/mainfood"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="29dp"
+            android:layout_marginTop="429dp"
+            android:layout_toRightOf="@id/mcdfoodimg2"
+            android:text="Quarter Pounder WIth Cheese"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+        //mcd food 3
+
+        <TextView
+            android:id="@+id/mcdfoodinfo2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/mcdfoodname2"
+            android:layout_marginLeft="29dp"
+            android:layout_marginTop="0dp"
+            android:layout_toRightOf="@id/mcdfoodimg2"
+            android:text="- Each Quarter Pounder with Cheese burger features a ¼ lb.* of 100% fresh beef that's hot, deliciously juicy and cooked when you order. It's seasoned with just a pinch of salt and pepper, sizzled on a flat iron grill, then topped with slivered onions, tangy pickles and two slices of melty cheese on a sesame seed bun."
+            android:textSize="15dp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/mcdfoodimg3"
+            android:layout_width="98dp"
+            android:layout_height="89dp"
+            android:layout_below="@+id/mcdfoodimg2"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_gravity="center"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="40dp"
+            android:adjustViewBounds="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/mcdfood3" />
+
+        <TextView
+            android:id="@+id/mcdfoodname3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/mainfood"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="38dp"
+            android:layout_marginTop="566dp"
+            android:layout_toRightOf="@id/mcdfoodimg3"
+            android:text="GCB - Grilleed Chicken Burger"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/mcdfoodinfo3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/mcdfoodname3"
+            android:layout_marginLeft="25dp"
+            android:layout_toRightOf="@id/mcdfoodimg3"
+            android:text="- A delicious grilled chicken thigh, topped with crunchy iceberg lettuce and smoky chargrilled sauce, served in a toasted sesame seed bun"
+            android:textSize="15dp"
+            android:textStyle="bold" />
+
+        //mcd food4
+
+        <ImageView
+            android:id="@+id/mcdfoodimg4"
+            android:layout_width="98dp"
+            android:layout_height="89dp"
+            android:layout_below="@+id/mcdfoodimg3"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_gravity="center"
+            android:layout_marginStart="11dp"
+            android:layout_marginLeft="11dp"
+            android:layout_marginTop="20dp"
+            android:adjustViewBounds="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/mcdfood4" />
+
+        <TextView
+            android:id="@+id/mcdfoodname4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/mcdfoodinfo3"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="28dp"
+            android:layout_marginTop="673dp"
+            android:layout_toRightOf="@id/mcdfoodimg4"
+            android:text="Fish-o-fillet"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/mcdfoodinfo4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/mcdfoodname4"
+            android:layout_marginLeft="25dp"
+            android:layout_toRightOf="@id/mcdfoodimg4"
+            android:text="- A classic favourite of a fish burger served with tartar sauce and cheddar cheese in a steamed bun."
+            android:textSize="15dp"
+            android:textStyle="bold" />
+
+        //mcd food5
+
+        <ListView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/mcdfood"
+            android:layout_below="@id/mainfood"/>
+        <ImageView
+            android:id="@+id/mcdfoodimg5"
+            android:layout_width="98dp"
+            android:layout_height="89dp"
+            android:layout_below="@+id/mcdfoodimg4"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_gravity="center"
+            android:layout_marginStart="11dp"
+            android:layout_marginLeft="11dp"
+            android:layout_marginTop="20dp"
+            android:adjustViewBounds="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/mcdfood5" />
+
+        <TextView
+            android:id="@+id/mcdfoodname5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/mcdfoodinfo4"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="32dp"
+            android:layout_marginTop="785dp"
+            android:layout_toRightOf="@id/mcdfoodimg5"
+            android:text="Cheeseburger"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/mcdfoodinfo5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/mcdfoodname5"
+            android:layout_marginLeft="25dp"
+            android:layout_toRightOf="@id/mcdfoodimg5"
+            android:text="Complement the taste and pure Beef Burger with a slice of cheese."
+            android:textSize="15dp"
+            android:textStyle="bold" />
+
+        //side order
+
+        <TextView
+            android:id="@+id/sideorder"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/mcdfoodinfo5"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginStart="252dp"
+            android:layout_marginLeft="252dp"
+            android:layout_marginTop="30dp"
+            android:text="Side orders"
+            android:textSize="25dp"
+            android:textStyle="bold" />
+
+        //mcd side food1
+
+        <ImageView
+            android:id="@+id/mcdsidefoodimg1"
+            android:layout_width="98dp"
+            android:layout_height="89dp"
+            android:layout_below="@+id/mcdfoodimg5"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_gravity="center"
+            android:layout_marginStart="11dp"
+            android:layout_marginLeft="11dp"
+            android:layout_marginTop="20dp"
+            android:adjustViewBounds="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/mcdside1" />
+
+        <TextView
+            android:id="@+id/mcdsidefoodname1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/sideorder"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="32dp"
+            android:layout_marginTop="785dp"
+            android:layout_toRightOf="@id/mcdfoodimg5"
+            android:text="Sundae Cone"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
