@@ -5,6 +5,8 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.ViewModelProviders;
 
 import android.view.LayoutInflater;
@@ -17,7 +19,7 @@ import com.xhpp.foodpenguin.R;
 import com.xhpp.foodpenguin.ui.account.AccountViewModel;
 import com.xhpp.foodpenguin.ui.cart.CartFragment;
 
-public class checkout_fragment extends Fragment {
+public class checkout_fragment extends Fragment implements View.OnClickListener{
 
     ImageButton back;
 
@@ -26,15 +28,21 @@ public class checkout_fragment extends Fragment {
         getActivity().getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN);
 
         back = view.findViewById(R.id.back);
-        back.setOnClickListener(new View.OnClickListener(){
 
-            @Override
-            public void onClick(View view){
-                Intent i = new Intent(getActivity(), CartFragment.class);
-                startActivity(i);
-            }
-        });
+        back.setOnClickListener(this);
 
         return view;
     }
+
+    public void onClick(View view){
+        CartFragment cartFragment = new CartFragment();
+        FragmentManager fragmentManager = getFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.replace(((ViewGroup)getView().getParent()).getId(), cartFragment);
+        fragmentTransaction.addToBackStack(null);
+        fragmentTransaction.commit();
+    }
+
+
+
 }
