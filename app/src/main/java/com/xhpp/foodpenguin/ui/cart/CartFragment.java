@@ -5,8 +5,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -28,6 +30,7 @@ public class CartFragment extends Fragment  implements View.OnClickListener{
     TextView date;
     ImageButton back;
     Button checkout;
+    CheckBox checkBox;
 
     @Nullable
     @Override
@@ -47,6 +50,7 @@ public class CartFragment extends Fragment  implements View.OnClickListener{
 
         back = view.findViewById(R.id.back);
         checkout = view.findViewById(R.id.checkout_button);
+        checkBox = view.findViewById(R.id.tac_agree);
 
         back.setOnClickListener(this);
         checkout.setOnClickListener(this);
@@ -68,12 +72,19 @@ public class CartFragment extends Fragment  implements View.OnClickListener{
                 break;
 
             case R.id.checkout_button:
-                checkout_Fragment checkout_fragment = new checkout_Fragment();
-                FragmentManager fragmentManager2 = getFragmentManager();
-                FragmentTransaction fragmentTransaction2 = fragmentManager2.beginTransaction();
-                fragmentTransaction2.replace(((ViewGroup)getView().getParent()).getId(), checkout_fragment);
-                fragmentTransaction2.addToBackStack(null);
-                fragmentTransaction2.commit();
+                if(checkBox.isChecked())
+                {
+                    checkout_Fragment checkout_fragment = new checkout_Fragment();
+                    FragmentManager fragmentManager2 = getFragmentManager();
+                    FragmentTransaction fragmentTransaction2 = fragmentManager2.beginTransaction();
+                    fragmentTransaction2.replace(((ViewGroup)getView().getParent()).getId(), checkout_fragment);
+                    fragmentTransaction2.addToBackStack(null);
+                    fragmentTransaction2.commit();
+                }
+                else
+                {
+                    Toast.makeText(getActivity(),"Please agree to the TAC", Toast.LENGTH_SHORT).show();
+                }
                 break;
         }
     }

@@ -15,9 +15,16 @@ import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
 import com.xhpp.foodpenguin.R;
 import com.xhpp.foodpenguin.ui.Order;
 import com.xhpp.foodpenguin.ui.account.AccountViewModel;
@@ -30,6 +37,9 @@ public class checkout_Fragment extends Fragment implements View.OnClickListener{
     ImageButton back;
     Button confirm;
     RadioGroup checkout;
+    FirebaseFirestore db;
+    FirebaseAuth fAuth;
+    RadioButton wallet_amount;
 
     public View onCreateView(@NonNull LayoutInflater inflater, @NonNull ViewGroup container, @NonNull Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_checkout_fragment, container, false);
@@ -38,9 +48,14 @@ public class checkout_Fragment extends Fragment implements View.OnClickListener{
         back = view.findViewById(R.id.back);
         confirm = view.findViewById(R.id.confirm_button);
         checkout = view.findViewById(R.id.payment_method);
+        wallet_amount = view.findViewById(R.id.wallet_text);
+        fAuth = FirebaseAuth.getInstance();
+        db = FirebaseFirestore.getInstance();
 
         back.setOnClickListener(this);
         confirm.setOnClickListener(this);
+
+        getData();
 
         return view;
     }
@@ -72,6 +87,25 @@ public class checkout_Fragment extends Fragment implements View.OnClickListener{
                 break;
         }
 
+    }
+
+    public void getData() {
+        String userId = fAuth.getCurrentUser().getUid();
+        DocumentReference documentReference = db.collection("users").document(userId);
+        documentReference.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                if (task.isSuccessful())
+                {
+                    DocumentSnapshot document = task.getResult();
+                    if (document.exists())
+                    {
+                        Double walletAmountDB = document.getDouble("walletAmount");
+                        wallet_amount.setText("Penguin Wallet\nRM"+String.format("%.2f", walletAmountDB));
+                    }
+                }
+            }
+        });
     }
 
 

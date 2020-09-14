@@ -84,11 +84,68 @@
                 android:id="@+id/size">
 
                 <TextView
+                    android:id="@+id/size_text"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Size"
                     app:layout_constraintTop_toTopOf="@+id/size"
                     app:layout_constraintStart_toStartOf="@+id/size"/>
+
+                <RadioGroup
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/sizeRadio"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/size_text">
+
+                    <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:text="Small" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="30dp"
+                        android:text="Medium" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="30dp"
+                        android:text="Large" />
+
+                </RadioGroup>
+
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:layout_marginEnd="4dp"
+                    android:layout_marginRight="4dp"
+                    android:text="- RM 1.00"
+                    android:textColor="#F61818"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/size_text" />
+
+                <TextView
+                    android:id="@+id/textView4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:layout_marginEnd="4dp"
+                    android:layout_marginRight="4dp"
+                    android:text="RM 0.00"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:layout_marginEnd="4dp"
+                    android:layout_marginRight="4dp"
+                    android:text="+ RM 2.00"
+                    android:textColor="#16D30F"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -194,7 +251,6 @@
         android:layout_height="30dp"
         android:background="#246BE6"
         android:gravity="center_horizontal"
-        android:text="Total : RM15.10"
         android:textAlignment="center"
         android:textColor="#FDFDFD"
         app:layout_constraintBottom_toTopOf="@+id/nav_view"
