@@ -63,10 +63,10 @@ public class CartFragment extends Fragment  implements View.OnClickListener{
     public void onClick(View view){
         switch(view.getId()){
             case R.id.back:
-                food_info_Fragment food_info_fragment = new food_info_Fragment();
+                food_info_Fragment food_info_fragmentMCD = new food_info_Fragment();
                 FragmentManager fragmentManager = getFragmentManager();
                 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-                fragmentTransaction.replace(((ViewGroup)getView().getParent()).getId(), food_info_fragment);
+                fragmentTransaction.replace(((ViewGroup)getView().getParent()).getId(), food_info_fragmentMCD);
                 fragmentTransaction.addToBackStack(null);
                 fragmentTransaction.commit();
                 break;
