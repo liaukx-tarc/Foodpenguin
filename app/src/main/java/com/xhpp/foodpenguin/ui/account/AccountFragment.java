@@ -15,7 +15,8 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.ViewModelProviders;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -25,12 +26,10 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.google.firebase.firestore.SetOptions;
-import com.google.firebase.firestore.Transaction;
 import com.xhpp.foodpenguin.R;
 import com.xhpp.foodpenguin.ui.login.LoginActivity;
-import com.xhpp.foodpenguin.ui.order.OrderActivity;
+import com.xhpp.foodpenguin.ui.order.OrderFragment;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -201,8 +200,11 @@ public class AccountFragment extends Fragment{
                     }
                     break;
                 case R.id.my_order:
-                    Intent intent1 = new Intent (AccountFragment.this.getActivity(), OrderActivity.class);
-                    startActivity(intent1);
+                    OrderFragment orderFragment = new OrderFragment();
+                    FragmentManager fragmentManager = getFragmentManager();
+                    FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                    fragmentTransaction.replace(((ViewGroup)getView().getParent()).getId(), orderFragment);
+                    fragmentTransaction.commit();
                     break;
                 case R.id.logout:
                     fAuth.signOut();
