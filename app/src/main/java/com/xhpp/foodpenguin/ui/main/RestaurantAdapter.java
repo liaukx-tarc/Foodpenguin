@@ -84,7 +84,7 @@ public class RestaurantAdapter extends RecyclerView.Adapter<RestaurantAdapter.Re
     }
 
     private void fragmentJump(Restaurant restaurant) {
-        mFragnment = new Fragment()
+
     }
 
     @Override
@@ -131,7 +131,7 @@ public class RestaurantAdapter extends RecyclerView.Adapter<RestaurantAdapter.Re
         @Override
         protected void publishResults(CharSequence charSequence, FilterResults results) {
             arrayList.clear();
-            searchlist.addAll((List)results.values);
+            arrayList.addAll((List)results.values);
             notifyDataSetChanged();
         }
     };
