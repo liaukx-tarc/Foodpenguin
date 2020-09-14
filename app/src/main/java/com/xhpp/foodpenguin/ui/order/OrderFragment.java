@@ -14,10 +14,16 @@ import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.NavigationUI;
+import androidx.recyclerview.widget.DefaultItemAnimator;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.xhpp.foodpenguin.R;
+import com.xhpp.foodpenguin.ui.Order;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class OrderFragment extends Fragment {
 
@@ -28,6 +34,8 @@ public class OrderFragment extends Fragment {
     ImageButton backButton;
     CardView currentOrderContainer;
     RecyclerView recentOrderDetail;
+    OrderAdapter orderAdapter;
+    List<Order> orderList = new ArrayList<>();
 
     @Nullable
     @Override
@@ -49,6 +57,19 @@ public class OrderFragment extends Fragment {
         currentOrderContainer = view.findViewById(R.id.currentOrderContainer);
         currentOrderContainer.setVisibility(View.GONE);
         recentOrderDetail = view.findViewById(R.id.recentOrderDetail);
+        recentOrderDetail.setVisibility(View.GONE);
+
+        orderAdapter = new OrderAdapter(orderList,this.getContext());
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this.getContext(), LinearLayoutManager.VERTICAL,false);
+        recentOrderDetail.setLayoutManager((layoutManager));
+        recentOrderDetail.setItemAnimator(new DefaultItemAnimator());
+        recentOrderDetail.setAdapter((orderAdapter));
+
+        for(int i = 0; i < 2; i++)
+        {
+            Order order = new Order("1234","OD012","KFC","12/9/2020",20.00);
+            orderList.add(order);
+        }
 
         return view;
     }

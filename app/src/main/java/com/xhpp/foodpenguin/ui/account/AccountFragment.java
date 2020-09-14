@@ -203,7 +203,8 @@ public class AccountFragment extends Fragment{
                     OrderFragment orderFragment = new OrderFragment();
                     FragmentManager fragmentManager = getFragmentManager();
                     FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-                    fragmentTransaction.replace(((ViewGroup)getView().getParent()).getId(), orderFragment);
+                    fragmentTransaction.add(((ViewGroup)getView().getParent()).getId(), orderFragment);
+                    fragmentTransaction.addToBackStack(null);
                     fragmentTransaction.commit();
                     break;
                 case R.id.logout:
