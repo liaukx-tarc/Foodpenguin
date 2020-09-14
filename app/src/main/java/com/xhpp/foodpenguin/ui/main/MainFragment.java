@@ -90,7 +90,6 @@ public class MainFragment extends Fragment implements  View.OnClickListener{
                 break;
             case R.id.searchButton:
                 String text = textInputLayout.getEditText().getText().toString();
-                Toast.makeText(getActivity(),text,Toast.LENGTH_SHORT).show();
                 mAdapter.getFilter().filter(text);
                 break;
         }
