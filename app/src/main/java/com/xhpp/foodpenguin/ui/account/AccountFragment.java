@@ -30,6 +30,7 @@ import com.google.firebase.firestore.SetOptions;
 import com.google.firebase.firestore.Transaction;
 import com.xhpp.foodpenguin.R;
 import com.xhpp.foodpenguin.ui.login.LoginActivity;
+import com.xhpp.foodpenguin.ui.order.OrderActivity;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -200,13 +201,14 @@ public class AccountFragment extends Fragment{
                     }
                     break;
                 case R.id.my_order:
-                    // do stuff
+                    Intent intent1 = new Intent (AccountFragment.this.getActivity(), OrderActivity.class);
+                    startActivity(intent1);
                     break;
                 case R.id.logout:
                     fAuth.signOut();
-                    Intent intent = new Intent (AccountFragment.this.getActivity(), LoginActivity.class);
-                    startActivity(intent);
-                    Toast.makeText(AccountFragment.this.getActivity(),"Log Out Successfully", Toast.LENGTH_SHORT);
+                    Intent intent2 = new Intent (AccountFragment.this.getActivity(), LoginActivity.class);
+                    startActivity(intent2);
+                    Toast.makeText(getActivity(),"Log Out Successfully", Toast.LENGTH_SHORT).show();
                     break;
             }
         }

@@ -65,7 +65,7 @@
                 android:layout_height="30dp"
                 android:layout_marginLeft="36dp"
                 android:gravity="left"
-                android:text="10.50"
+                android:text="0.00"
                 android:textColor="@color/colorPrimaryDark"
                 android:textSize="24sp"
                 android:textStyle="bold"
@@ -176,7 +176,7 @@
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/topup_value"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="60dp"
         android:layout_marginTop="20dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
@@ -206,7 +206,7 @@
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/topup_value" />
+        app:layout_constraintTop_toBottomOf="@+id/topup_value"/>
 
 
 
