@@ -120,7 +120,6 @@ public class AccountFragment extends Fragment{
                         fnameText.getEditText().setText(fname);
                         phoneText.getEditText().setText(phoneNum);
                         addressText.getEditText().setText(address);
-
                     }
                 }
             }
