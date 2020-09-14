@@ -7,6 +7,7 @@ public class Users {
     private String email;
     private String address;
     private String fname;
+    private double walletAmount;
 
     public Users(String username, String password, String phone, String email)
     {
@@ -45,6 +46,10 @@ public class Users {
         this.fname = fname;
     }
 
+    public void setWalletAmount(double walletAmount)  {
+        this.walletAmount = walletAmount;
+    }
+
     public String getUsername() {
         return username;
     }
@@ -68,4 +73,7 @@ public class Users {
     public String getFname() {
         return fname;
     }
+
+    public double getwalletAmount() { return walletAmount; }
+
 }

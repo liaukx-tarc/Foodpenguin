@@ -39,10 +39,7 @@
     <string name="cards">Cards</string>
     <string name="online_banking">Online Banking</string>
     <string name="orders">Orders</string>
-    <string name="checkout_card"><![CDATA[Cards\nVisa & Mastercard]]></string>
-    <string name="checkout">checkout</string>
-    <string-array name="ifNotAvailable_array">
-        <item>Cancel this product</item>
-        <item>Change product by call</item>
-    </string-array>
+    <string name="current_order">Current Order</string>
+    <string name="recent_orders">Recent Orders</string>
+    <string name="order_thanks">Thank you for your order !</string>
 </resources>

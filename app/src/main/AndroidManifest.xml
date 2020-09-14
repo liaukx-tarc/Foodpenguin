@@ -29,6 +29,11 @@
 
         <activity android:name=".ui.register.RegisterActivity" />
 
+        <activity android:name=".ui.checkout.CheckoutActivity"/>
+
+        <activity android:name=".ui.food_info.FoodInfoActivity" />
+
+
     </application>
 
 </manifest>
