@@ -16,8 +16,8 @@
     <string name="select_a_payment_method">Select a payment method</string>
     <string name="confirm">Confirm</string>
     <string name="send_text">SEND</string>
-    <string name="forget_pass_1">Please enter your Username</string>
-    <string name="forget_pass_2">We will send a verification code to your registered phone</string>
+    <string name="forget_pass_1">Please enter your E-mail</string>
+    <string name="forget_pass_2">We will send a verification code to your email</string>
     <string name="phone_number_hint">Phone Number</string>
     <string name="verification_hint">Verification</string>
     <string name="retype_password_hint">Retype Password</string>
