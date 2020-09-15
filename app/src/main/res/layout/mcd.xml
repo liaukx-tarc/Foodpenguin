@@ -7,6 +7,7 @@
 
 
     <RelativeLayout
+        android:id="@+id/mcd"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
@@ -62,6 +63,17 @@
             android:textStyle="bold" />
 
         //mcd1
+        <TextView
+            android:id="@+id/price1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textView2"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginStart="127dp"
+            android:layout_marginLeft="127dp"
+            android:layout_marginTop="2dp"
+            android:text="RM14 " />
         <ImageView
             android:id="@+id/imageView1"
             android:layout_width="118dp"
@@ -101,6 +113,18 @@
             android:textSize="15dp" />
 
         //mcd2
+
+        <TextView
+            android:id="@+id/price2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textView4"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginStart="135dp"
+            android:layout_marginLeft="135dp"
+            android:layout_marginTop="3dp"
+            android:text="RM10 " />
 
         <ImageView
             android:id="@+id/imageView2"
@@ -143,6 +167,18 @@
             android:textSize="15dp" />
 
         //mcd3
+
+        <TextView
+            android:id="@+id/price3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textView6"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginStart="127dp"
+            android:layout_marginLeft="127dp"
+            android:layout_marginTop="2dp"
+            android:text="RM12 " />
 
         <ImageView
             android:id="@+id/imageView3"

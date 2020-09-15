@@ -1,8 +1,5 @@
 package com.xhpp.foodpenguin.ui.main;
 
-import android.os.Parcel;
-import android.os.Parcelable;
-
 public class Restaurant {
 
     private int mImageResource;
@@ -24,6 +21,7 @@ public class Restaurant {
     public String getText2() {
         return mText2;
     }
+
 }
 
 
