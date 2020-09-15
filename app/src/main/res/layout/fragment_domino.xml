@@ -99,18 +99,6 @@
             android:text="- Roasted Chicken, Chicken Pepperoni and Mushroom Slices on our awesome Smoky Blended BBQ Sauce (Surcharge Applies)."
             android:textSize="15dp" />
 
-        <TextView
-            android:id="@+id/price1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/textView2"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentLeft="true"
-            android:layout_marginStart="127dp"
-            android:layout_marginLeft="127dp"
-            android:layout_marginTop="2dp"
-            android:text="RM12 " />
-
         //mcd2
 
         <ImageView
@@ -151,18 +139,6 @@
             android:layout_toRightOf="@+id/imageView2"
             android:text="- Loads of delicious roasted chicken, shredded chicken juicy pineapples and fresh mushrooms on our brand new pizza."
             android:textSize="15dp" />
-
-        <TextView
-            android:id="@+id/price2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/textView4"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentLeft="true"
-            android:layout_marginStart="127dp"
-            android:layout_marginLeft="127dp"
-            android:layout_marginTop="2dp"
-            android:text="RM12 " />
 
         //mcd3
 
@@ -206,18 +182,6 @@
             android:layout_toRightOf="@+id/imageView3"
             android:text="- Generous portions of everyone's favorite beef pepperoni, ground beef and fresh mushrooms on our new blended smoky BBQ sauce (Surcharge Applies)"
             android:textSize="15dp" />
-
-        <TextView
-            android:id="@+id/price3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/textView6"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentLeft="true"
-            android:layout_marginStart="127dp"
-            android:layout_marginLeft="127dp"
-            android:layout_marginTop="2dp"
-            android:text="RM12 " />
 
     </RelativeLayout>
 

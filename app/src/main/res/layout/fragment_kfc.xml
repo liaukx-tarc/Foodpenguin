@@ -99,18 +99,6 @@
             android:text="- 3 pieces of chicken, cheezy wedges, whipped potato, drink"
             android:textSize="15dp" />
 
-        <TextView
-            android:id="@+id/price1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/textView2"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentLeft="true"
-            android:layout_marginStart="127dp"
-            android:layout_marginLeft="127dp"
-            android:layout_marginTop="2dp"
-            android:text="RM15 " />
-
         //mcd2
 
         <ImageView
@@ -133,7 +121,7 @@
             android:layout_alignParentTop="true"
             android:layout_marginStart="135dp"
             android:layout_marginLeft="135dp"
-            android:layout_marginTop="516dp"
+            android:layout_marginTop="513dp"
             android:layout_toRightOf="@id/imageView2"
             android:text="SIGNATURE BOX"
             android:textColor="@android:color/black"
@@ -151,18 +139,6 @@
             android:layout_toRightOf="@+id/imageView2"
             android:text="- 1 piece of chicken, Zinger burger, fries, drink."
             android:textSize="15dp" />
-
-        <TextView
-            android:id="@+id/price2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/textView4"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentLeft="true"
-            android:layout_marginStart="127dp"
-            android:layout_marginLeft="127dp"
-            android:layout_marginTop="2dp"
-            android:text="RM13 " />
 
         //mcd3
 
@@ -206,18 +182,6 @@
             android:layout_toRightOf="@+id/imageView3"
             android:text="- 1 piece of chicken, Zinger Stacker, fries, drink."
             android:textSize="15dp" />
-
-        <TextView
-            android:id="@+id/price3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/textView6"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentLeft="true"
-            android:layout_marginStart="127dp"
-            android:layout_marginLeft="127dp"
-            android:layout_marginTop="2dp"
-            android:text="RM15 " />
 
     </RelativeLayout>
 
