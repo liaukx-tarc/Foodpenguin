@@ -82,7 +82,8 @@
                     android:text="Quarter Pounder with Cheese\nIt's seasoned with just a pinch of salt and pepper, sizzled on a flat iron grill, then topped with slivered onions, tangy pickles and two slices of melty cheese on a sesame seed bun."
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="@+id/food_information"
-                    android:textAlignment="right" />
+                    android:textAlignment="gravity"
+                    android:gravity="right" />
 
                 <TextView
                     android:id="@+id/food_price"

@@ -82,7 +82,8 @@
                     android:text="QGCB - Grilled Chicken Burger\nA delicious grilled chicken thigh, topped with crunchy iceberg lettuce and smoky chargrilled sauce, served in a toasted sesame seed bun"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="@+id/food_information"
-                    android:textAlignment="right" />
+                    android:textAlignment="gravity"
+                    android:gravity="right" />
 
                 <TextView
                     android:id="@+id/food_price"

@@ -82,7 +82,8 @@
                     android:text="MEATASAURUS\nGenerous portions of everyone's favorite beef pepperoni, ground beef and fresh mushrooms on our new blended smoky BBQ sauce (Surcharge Applies)"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="@+id/food_information"
-                    android:textAlignment="right" />
+                    android:textAlignment="gravity"
+                    android:gravity="right" />
 
                 <TextView
                     android:id="@+id/food_price"

@@ -219,7 +219,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Total(Incl. Tax)"
+                    android:textColor="#090707"
                     android:textSize="16dp"
+                    android:textStyle="bold"
                     app:layout_constraintStart_toStartOf="@+id/order_total"
                     app:layout_constraintTop_toTopOf="@+id/order_total" />
                 

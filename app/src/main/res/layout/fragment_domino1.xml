@@ -82,7 +82,8 @@
                     android:text="CHICKENSAURUS\nRoasted Chicken, Chicken Pepperoni and Mushroom Slices on our awesome Smoky Blended BBQ Sauce (Surcharge Applies)."
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="@+id/food_information"
-                    android:textAlignment="right" />
+                    android:textAlignment="gravity"
+                    android:gravity="right" />
 
                 <TextView
                     android:id="@+id/food_price"

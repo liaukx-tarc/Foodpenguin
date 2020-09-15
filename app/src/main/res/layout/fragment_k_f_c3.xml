@@ -82,7 +82,8 @@
                     android:text="STACKER BOX\n1 piece of chicken, Zinger Stacker, fries, drink."
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="@+id/food_information"
-                    android:textAlignment="right" />
+                    android:textAlignment="gravity"
+                    android:gravity="right" />
 
                 <TextView
                     android:id="@+id/food_price"
