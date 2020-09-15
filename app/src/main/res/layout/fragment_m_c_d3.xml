@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.food_info.MCD3"
+    android:background="@color/colorBackground2">
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="?android:attr/windowBackground"
+        app:itemIconTint="@animator/navbar"
+        app:itemTextColor="@animator/navbar"
+        app:labelVisibilityMode="labeled"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:menu="@menu/bottom_nav_menu" />
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/nav_host_fragment"
+        android:id="@+id/back_foodInfo">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageButton
+                android:id="@+id/back"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="10dp"
+                android:background="@android:color/transparent"
+                android:src="@drawable/ic_back"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginStart="10dp" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <ScrollView
+        android:id="@+id/foodInfoScroll"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/back_foodInfo">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintTop_toBottomOf="@+id/foodInfoScroll">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/food_information">
+
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:src="@drawable/mcdfood3"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/food_information"/>
+
+                <TextView
+                    android:id="@+id/desc"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:text="QGCB - Grilled Chicken Burger\nA delicious grilled chicken thigh, topped with crunchy iceberg lettuce and smoky chargrilled sauce, served in a toasted sesame seed bun"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/food_information"
+                    android:textAlignment="gravity"
+                    android:gravity="right" />
+
+                <TextView
+                    android:id="@+id/food_price"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:gravity="center_horizontal"
+                    android:text="12.00"
+                    android:textAlignment="center"
+                    app:layout_constraintTop_toBottomOf="@+id/desc"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#2C55ED" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/size">
+
+                <TextView
+                    android:id="@+id/size_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Size"
+                    app:layout_constraintTop_toTopOf="@+id/size"
+                    app:layout_constraintStart_toStartOf="@+id/size"/>
+
+                <RadioGroup
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/sizeRadio"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/size_text">
+
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="30dp"
+                        android:text="Medium" />
+
+
+                </RadioGroup>
+
+
+
+                <TextView
+                    android:id="@+id/textView4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:layout_marginEnd="4dp"
+                    android:layout_marginRight="4dp"
+                    android:text="RM 0.00"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toBottomOf="@+id/size"
+                    android:layout_marginBottom="0dp"/>
+
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#2C55ED" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/special_requirement">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Special Requirement\nIf you have any special requirement you can write in the textbox."
+                    app:layout_constraintTop_toTopOf="@+id/special_requirement"
+                    android:id="@+id/requirement_text"/>
+
+                <EditText
+                    android:layout_width="400dp"
+                    android:layout_height="100dp"
+                    android:layout_marginLeft="5dp"
+                    android:hint="Special Requirement"
+                    android:theme="@android:style/Theme.Light"
+                    app:layout_constraintStart_toStartOf="@+id/special_requirement"
+                    app:layout_constraintTop_toBottomOf="@+id/requirement_text" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#2C55ED" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/ifNotAvailable">
+
+                <TextView
+                    android:id="@+id/ifNotAvailableText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="If this product not available"
+                    app:layout_constraintTop_toTopOf="@+id/ifNotAvailable"/>
+
+                <Spinner
+                    android:id="@+id/ifNotAvailableSpinner"
+                    android:layout_width="250dp"
+                    android:layout_height="30dp"
+                    tools:layout_editor_absoluteY="298dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/ifNotAvailableText"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <TextView
+        android:id="@+id/total"
+        android:layout_width="204dp"
+        android:layout_height="30dp"
+        android:background="#246BE6"
+        android:gravity="center_horizontal"
+        android:textAlignment="center"
+        android:textColor="#FDFDFD"
+        app:layout_constraintBottom_toTopOf="@+id/nav_view"
+        android:text="RM12.00"
+        app:layout_constraintEnd_toStartOf="@+id/addCart"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/addCart"
+        android:layout_width="204dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="3dp"
+        android:layout_marginLeft="3dp"
+        android:background="#58EC23"
+        android:clickable="true"
+        android:gravity="center_horizontal"
+        android:text="Add to Cart"
+        android:textAlignment="center"
+        android:textColor="#F6F3F3"
+        app:layout_constraintBottom_toTopOf="@+id/nav_view"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/total" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

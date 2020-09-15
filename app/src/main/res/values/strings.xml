@@ -16,8 +16,8 @@
     <string name="select_a_payment_method">Select a payment method</string>
     <string name="confirm">Confirm</string>
     <string name="send_text">SEND</string>
-    <string name="forget_pass_1">Please enter your Username</string>
-    <string name="forget_pass_2">We will send a verification code to your registered phone</string>
+    <string name="forget_pass_1">Please enter your E-mail</string>
+    <string name="forget_pass_2">We will send a verification code to your email</string>
     <string name="phone_number_hint">Phone Number</string>
     <string name="verification_hint">Verification</string>
     <string name="retype_password_hint">Retype Password</string>
@@ -29,10 +29,29 @@
     <string name="phone_number">Phone Number</string>
     <string name="email">E-mail</string>
     <string name="address">Address</string>
-    <string name="my_order">My Order</string>
+    <string name="my_order">My Orders</string>
     <string name="log_out">Log Out</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="food_screen_menu">Food Screen Menu</string>
     <string name="search">Search</string>
+    <string name="penguin_wallet">Penguin Wallet</string>
+    <string name="topup_hint">Enter Your Top Up Value</string>
+    <string name="top_up_button">Top Up</string>
+    <string name="wallet_discount_msg">Enjoy additional discount using Penguin Wallet !</string>
+    <string name="top_up_method">Top Up Method</string>
+    <string name="cards">Cards</string>
+    <string name="online_banking">Online Banking</string>
+    <string name="orders">Orders</string>
+    <string name="current_order">Current Order</string>
+    <string name="recent_orders">Recent Orders</string>
+    <string name="order_thanks">Thank you for your order !</string>
+    <string name="checkout_card"><![CDATA[Cards\nVisa & Mastercard]]></string>
+    <string name="checkout">checkout</string>
+    <string-array name="ifNotAvailable_array">
+        <item>Cancel this product</item>
+        <item>Change product by call</item>
+    </string-array>
+    <string name="arriving">Arriving</string>
+    <string name="picking_up">Picking-up</string>
+    <string name="preparing">Preparing</string>
+    <string name="receiving">Receiving</string>
 </resources>

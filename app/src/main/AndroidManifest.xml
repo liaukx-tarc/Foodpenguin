@@ -18,7 +18,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity">
+        <activity android:name=".MainActivity" android:windowSoftInputMode="adjustPan">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -29,6 +29,11 @@
         <activity android:name=".ui.register.RegisterActivity" />
         <activity android:name=".ui.checkout.CheckoutActivity" />
         <activity android:name=".ui.food_info.FoodInfoActivity" />
+
+        <activity android:name=".ui.forgetPassword.ForgetPassword" />
+
+        <activity android:name=".ui.register.RegisterActivity" />
+
     </application>
 
 </manifest>
