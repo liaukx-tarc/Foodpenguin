@@ -158,7 +158,10 @@ public class OrderFragment extends Fragment {
                 case R.id.downButton:
                     curUpButton.setVisibility(View.VISIBLE);
                     curDownButton.setVisibility(View.GONE);
-                    order_status = Integer.parseInt(orderStatusText.getText().toString());
+                    if (!orderStatusText.getText().toString().isEmpty())
+                    {
+                        order_status = Integer.parseInt(orderStatusText.getText().toString());
+                    }
                     if (order_status > 0 && order_status < 5)
                     {
                         has_order = true;

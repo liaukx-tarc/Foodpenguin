@@ -10,7 +10,6 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         >
-        <activity android:name=".ui.main.RestaurantMenu"></activity>
         <activity android:name=".SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -27,12 +26,8 @@
         </activity>
         <activity android:name=".ui.login.LoginActivity" />
         <activity android:name=".ui.register.RegisterActivity" />
-        <activity android:name=".ui.checkout.CheckoutActivity" />
-        <activity android:name=".ui.food_info.FoodInfoActivity" />
 
         <activity android:name=".ui.forgetPassword.ForgetPassword" />
-
-        <activity android:name=".ui.register.RegisterActivity" />
 
     </application>
 
