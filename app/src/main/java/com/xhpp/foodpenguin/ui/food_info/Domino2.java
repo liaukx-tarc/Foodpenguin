@@ -67,6 +67,7 @@ public class Domino2 extends Fragment implements View.OnClickListener, AdapterVi
                 fragmentTransaction2.replace(((ViewGroup)getView().getParent()).getId(), cartFragment);
                 fragmentTransaction2.addToBackStack(null);
                 fragmentTransaction2.commit();
+                break;
         }
     }
 

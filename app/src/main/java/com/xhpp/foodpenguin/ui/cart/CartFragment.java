@@ -31,7 +31,6 @@ public class CartFragment extends Fragment  implements View.OnClickListener{
     ImageButton back;
     Button checkout;
     CheckBox checkBox;
-    TextView pName;
 
     @Nullable
     @Override
@@ -52,7 +51,6 @@ public class CartFragment extends Fragment  implements View.OnClickListener{
         back = view.findViewById(R.id.back);
         checkout = view.findViewById(R.id.checkout_button);
         checkBox = view.findViewById(R.id.tac_agree);
-        pName = view.findViewById(R.id.product_name);
 
 
         back.setOnClickListener(this);
@@ -81,7 +79,6 @@ public class CartFragment extends Fragment  implements View.OnClickListener{
                     FragmentManager fragmentManager2 = getFragmentManager();
                     FragmentTransaction fragmentTransaction2 = fragmentManager2.beginTransaction();
                     fragmentTransaction2.replace(((ViewGroup)getView().getParent()).getId(), checkout_fragment);
-                    fragmentTransaction2.addToBackStack(null);
                     fragmentTransaction2.commit();
                 }
                 else

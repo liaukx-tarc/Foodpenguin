@@ -69,6 +69,7 @@ public class KFC2 extends Fragment implements View.OnClickListener, AdapterView.
                 fragmentTransaction2.replace(((ViewGroup)getView().getParent()).getId(), cartFragment);
                 fragmentTransaction2.addToBackStack(null);
                 fragmentTransaction2.commit();
+                break;
         }
     }
 
