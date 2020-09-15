@@ -45,6 +45,7 @@ public class checkout_Fragment extends Fragment implements View.OnClickListener{
     FirebaseFirestore db;
     FirebaseAuth fAuth;
     RadioButton wallet_amount;
+    double walletAmount;
     int price = 15;
     int orderCount = 0;
 
@@ -93,6 +94,8 @@ public class checkout_Fragment extends Fragment implements View.OnClickListener{
                     String orderId = "OD" + String.format("%06d",orderCount);
                     Order order = new Order(userId, orderId, shopName, formattedDate, 15);
                     db.collection("orders").document(orderId).set(order);
+                    db.collection("users").document(userId).update("walletAmount",walletAmount - 15);
+                    Toast.makeText(getActivity(),"Checkout Successfully", Toast.LENGTH_SHORT).show();
                     OrderFragment orderFragment = new OrderFragment();
                     FragmentManager fragmentManager2 = getFragmentManager();
                     FragmentTransaction fragmentTransaction2 = fragmentManager2.beginTransaction();
@@ -118,6 +121,7 @@ public class checkout_Fragment extends Fragment implements View.OnClickListener{
                     {
                         Double walletAmountDB = document.getDouble("walletAmount");
                         wallet_amount.setText("Penguin Wallet\nRM"+String.format("%.2f", walletAmountDB));
+                        walletAmount = walletAmountDB;
                     }
                 }
             }
