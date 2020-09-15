@@ -2,14 +2,9 @@ package com.xhpp.foodpenguin.ui.main;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
-import android.widget.SearchView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -17,20 +12,15 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
-import com.google.android.material.bottomappbar.BottomAppBar;
-import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 import com.xhpp.foodpenguin.R;
-import com.xhpp.foodpenguin.ui.food_menu.domino;
-import com.xhpp.foodpenguin.ui.food_menu.kfc;
 import com.xhpp.foodpenguin.ui.food_menu.mcd;
-
 import java.util.ArrayList;
 
-public class MainFragment extends Fragment implements  View.OnClickListener{
+public class MainFragment extends Fragment implements  View.OnClickListener,ItemClickListener{
 
     ArrayList<Restaurant> arrayList;
     private RecyclerView mRecyclerView;
@@ -38,6 +28,9 @@ public class MainFragment extends Fragment implements  View.OnClickListener{
     private RecyclerView.LayoutManager mLayoutManager;
     TextInputLayout textInputLayout;
     Button button;
+    RecyclerView recyclerView;
+    RestaurantAdapter restaurantAdapter;
+
 
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_main, container, false);
@@ -56,7 +49,32 @@ public class MainFragment extends Fragment implements  View.OnClickListener{
         mRecyclerView.setLayoutManager(mLayoutManager);
         mRecyclerView.setAdapter(mAdapter);
 
+        recyclerView = view.findViewById(R.id.recycleView);
+        restaurantAdapter = new RestaurantAdapter(arrayList);
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL,false);
+        recyclerView.setLayoutManager(layoutManager);
+        recyclerView.setItemAnimator(new DefaultItemAnimator());
+        recyclerView.setAdapter(restaurantAdapter);
+        restaurantAdapter.setClickListener(this);
+
+
+
         return view;
+    }
+
+    @Override
+    public void onClick(View view, int position) {
+        String name = arrayList.get(position).getText1();
+        Toast.makeText(getActivity(),"Helo",Toast.LENGTH_SHORT).show();
+        if(name == "mcd") {
+            Fragment fragment = new Fragment();
+            FragmentManager fragmentManager = getFragmentManager();
+            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+            fragmentTransaction.replace(R.id.relativeLayout, fragment);
+            fragmentTransaction.commit();
+
+        }
+
     }
 
 
@@ -76,18 +94,6 @@ public class MainFragment extends Fragment implements  View.OnClickListener{
         Fragment fragment = null;
         switch(view.getId())
         {
-            case R.drawable.mcd:
-                fragment = new mcd();
-                replaceFragment(fragment);
-                break;
-            case R.drawable.kfc:
-                fragment = new kfc();
-                replaceFragment(fragment);
-                break;
-            case R.drawable.domino:
-                fragment = new domino();
-                replaceFragment(fragment);
-                break;
             case R.id.searchButton:
                 String text = textInputLayout.getEditText().getText().toString();
                 mAdapter.getFilter().filter(text);
@@ -95,15 +101,7 @@ public class MainFragment extends Fragment implements  View.OnClickListener{
         }
     }
 
-    public void replaceFragment(Fragment someFragment)
-    {
-        mcd itemFragment = new mcd();
-            FragmentManager fragmentManager = getFragmentManager();
-            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-            fragmentTransaction.add(((ViewGroup) getView().getParent()).getId(), itemFragment);
-            fragmentTransaction.addToBackStack(null);
-            fragmentTransaction.commit();
-    }
+
 }
 
 
