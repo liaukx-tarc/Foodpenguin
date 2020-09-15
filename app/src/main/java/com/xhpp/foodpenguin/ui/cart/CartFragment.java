@@ -21,8 +21,8 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
 import com.xhpp.foodpenguin.R;
-import com.xhpp.foodpenguin.ui.food_info.food_info_Fragment;
 import com.xhpp.foodpenguin.ui.checkout.checkout_Fragment;
+import com.xhpp.foodpenguin.ui.main.MainFragment;
 
 public class CartFragment extends Fragment  implements View.OnClickListener{
 
@@ -31,6 +31,7 @@ public class CartFragment extends Fragment  implements View.OnClickListener{
     ImageButton back;
     Button checkout;
     CheckBox checkBox;
+    TextView pName;
 
     @Nullable
     @Override
@@ -44,6 +45,8 @@ public class CartFragment extends Fragment  implements View.OnClickListener{
         SimpleDateFormat df = new SimpleDateFormat("yyyy/MM/dd hh:mm a");
         String formattedDate = df.format(c.getTime());
 
+        String prodName = getArguments().getString("prodName");
+
 
         date = view.findViewById(R.id.pick_up_time);
         date.setText(formattedDate);
@@ -51,6 +54,9 @@ public class CartFragment extends Fragment  implements View.OnClickListener{
         back = view.findViewById(R.id.back);
         checkout = view.findViewById(R.id.checkout_button);
         checkBox = view.findViewById(R.id.tac_agree);
+        pName = view.findViewById(R.id.product_name);
+        pName.setText(prodName);
+
 
         back.setOnClickListener(this);
         checkout.setOnClickListener(this);
@@ -63,10 +69,10 @@ public class CartFragment extends Fragment  implements View.OnClickListener{
     public void onClick(View view){
         switch(view.getId()){
             case R.id.back:
-                food_info_Fragment food_info_fragmentMCD = new food_info_Fragment();
+                MainFragment mainFragment = new MainFragment();
                 FragmentManager fragmentManager = getFragmentManager();
                 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-                fragmentTransaction.replace(((ViewGroup)getView().getParent()).getId(), food_info_fragmentMCD);
+                fragmentTransaction.replace(((ViewGroup)getView().getParent()).getId(), mainFragment);
                 fragmentTransaction.addToBackStack(null);
                 fragmentTransaction.commit();
                 break;

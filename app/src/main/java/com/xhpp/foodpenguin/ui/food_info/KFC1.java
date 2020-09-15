@@ -20,20 +20,17 @@ import android.widget.Spinner;
 
 import com.xhpp.foodpenguin.R;
 import com.xhpp.foodpenguin.ui.cart.CartFragment;
+import com.xhpp.foodpenguin.ui.main.MainFragment;
 
-public class food_info_Fragment extends Fragment implements View.OnClickListener, AdapterView.OnItemSelectedListener{
 
+public class KFC1 extends Fragment implements View.OnClickListener, AdapterView.OnItemSelectedListener{
     ImageButton back;
     Button cart;
-
     @Nullable
     @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, @NonNull ViewGroup container, @NonNull Bundle savedInstanceState){
-
-
-
-
-        View view = inflater.inflate(R.layout.fragment_food_info_,container,false);
+    public View onCreateView(@NonNull LayoutInflater inflater, @NonNull ViewGroup container, @NonNull Bundle savedInstanceState) {
+        // Inflate the layout for this fragment
+        View view =  inflater.inflate(R.layout.fragment_k_f_c1, container, false);
         getActivity().getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN);
 
         Spinner spinner = (Spinner) view.findViewById(R.id.ifNotAvailableSpinner);
@@ -55,7 +52,12 @@ public class food_info_Fragment extends Fragment implements View.OnClickListener
     public void onClick(View view){
         switch(view.getId()){
             case R.id.back:
-
+                MainFragment mainFragment = new MainFragment();
+                FragmentManager fragmentManager = getFragmentManager();
+                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                fragmentTransaction.replace(((ViewGroup)getView().getParent()).getId(), mainFragment);
+                fragmentTransaction.addToBackStack(null);
+                fragmentTransaction.commit();
                 break;
 
             case R.id.addCart:

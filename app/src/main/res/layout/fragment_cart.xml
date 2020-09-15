@@ -98,10 +98,21 @@
                 android:id="@+id/food_ordered">
 
                 <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Food ordered"
-                    app:layout_constraintTop_toTopOf="@id/food_ordered"/>
+                    android:id="@+id/product_name"
+                    android:layout_width="250dp"
+                    android:layout_height="30dp"
+                    app:layout_constraintTop_toTopOf="@id/food_ordered"
+                    app:layout_constraintStart_toStartOf="parent"/>
+
+                <TextView
+                    android:id="@+id/product_price"
+                    android:layout_width="100dp"
+                    android:layout_height="30dp"
+                    app:layout_constraintTop_toTopOf="@id/food_ordered"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:textAlignment="gravity"
+                    android:gravity="right"
+                    android:text="RM12.00"/>
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -154,12 +165,14 @@
                     app:layout_constraintEnd_toEndOf="@+id/order_subtotal"
                     app:layout_constraintTop_toTopOf="@+id/order_subtotal"
                     android:textAlignment="gravity"
-                    android:gravity="right"/>
+                    android:gravity="right"
+                    android:text="RM12.00"/>
 
                 <TextView
                     android:id="@+id/delivery_price"
                     android:layout_width="100dp"
                     android:layout_height="wrap_content"
+                    android:text="RM3.00"
                     android:layout_marginTop="5dp"
                     app:layout_constraintEnd_toEndOf="@+id/order_subtotal"
                     app:layout_constraintTop_toBottomOf="@+id/subtotal_price"
@@ -171,6 +184,7 @@
                     android:layout_width="100dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
+                    android:text="RM0.00"
                     app:layout_constraintEnd_toEndOf="@+id/order_subtotal"
                     app:layout_constraintTop_toBottomOf="@+id/delivery_price"
                     android:textAlignment="gravity"
@@ -217,7 +231,8 @@
                     app:layout_constraintEnd_toEndOf="@+id/order_total"
                     android:textAlignment="gravity"
                     android:gravity="right"
-                    android:textSize="16dp"/>
+                    android:textSize="16dp"
+                    android:text="RM15.00"/>
 
 
             </androidx.constraintlayout.widget.ConstraintLayout>

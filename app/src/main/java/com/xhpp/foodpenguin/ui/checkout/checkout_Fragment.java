@@ -32,6 +32,9 @@ import com.xhpp.foodpenguin.ui.cart.CartFragment;
 import com.xhpp.foodpenguin.ui.order.OrderAdapter;
 import com.xhpp.foodpenguin.ui.order.OrderFragment;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+
 public class checkout_Fragment extends Fragment implements View.OnClickListener{
 
     ImageButton back;
@@ -40,10 +43,12 @@ public class checkout_Fragment extends Fragment implements View.OnClickListener{
     FirebaseFirestore db;
     FirebaseAuth fAuth;
     RadioButton wallet_amount;
+    int price = 15;
 
     public View onCreateView(@NonNull LayoutInflater inflater, @NonNull ViewGroup container, @NonNull Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_checkout_fragment, container, false);
         getActivity().getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN);
+        Calendar c = Calendar.getInstance();
 
         back = view.findViewById(R.id.back);
         confirm = view.findViewById(R.id.confirm_button);
@@ -51,6 +56,7 @@ public class checkout_Fragment extends Fragment implements View.OnClickListener{
         wallet_amount = view.findViewById(R.id.wallet_text);
         fAuth = FirebaseAuth.getInstance();
         db = FirebaseFirestore.getInstance();
+
 
         back.setOnClickListener(this);
         confirm.setOnClickListener(this);
@@ -77,6 +83,12 @@ public class checkout_Fragment extends Fragment implements View.OnClickListener{
                 }
                 else
                 {
+                    Calendar c = Calendar.getInstance();
+                    SimpleDateFormat df = new SimpleDateFormat("yyyy/MM/dd");
+                    String formattedDate = df.format(c.getTime());
+                    String shopName = getArguments().getString("shop");
+                    Order order = new Order("1234", "OD014", shopName, formattedDate, 15);
+                    db.collection("orders").add(order);
                     OrderFragment orderFragment = new OrderFragment();
                     FragmentManager fragmentManager2 = getFragmentManager();
                     FragmentTransaction fragmentTransaction2 = fragmentManager2.beginTransaction();
@@ -106,6 +118,10 @@ public class checkout_Fragment extends Fragment implements View.OnClickListener{
                 }
             }
         });
+    }
+
+    public void saveOrder(){
+
     }
 
 
