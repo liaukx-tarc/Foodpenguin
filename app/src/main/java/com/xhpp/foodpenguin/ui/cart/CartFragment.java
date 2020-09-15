@@ -44,7 +44,6 @@ public class CartFragment extends Fragment  implements View.OnClickListener{
         SimpleDateFormat df = new SimpleDateFormat("yyyy/MM/dd hh:mm a");
         String formattedDate = df.format(c.getTime());
 
-        String prodName = getArguments().getString("prodName");
 
 
         date = view.findViewById(R.id.pick_up_time);
@@ -54,7 +53,6 @@ public class CartFragment extends Fragment  implements View.OnClickListener{
         checkout = view.findViewById(R.id.checkout_button);
         checkBox = view.findViewById(R.id.tac_agree);
         pName = view.findViewById(R.id.product_name);
-        pName.setText(prodName);
 
 
         back.setOnClickListener(this);

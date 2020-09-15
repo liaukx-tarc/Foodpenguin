@@ -87,10 +87,10 @@
                 android:layout_marginStart="127dp"
                 android:layout_marginLeft="127dp"
                 android:layout_marginTop="2dp"
-                android:text="RM14 " />
+                android:text="RM12 " />
 
-            <ImageView
-                android:id="@+id/imageView1"
+            <ImageButton
+                android:id="@+id/mcd1"
                 android:layout_width="118dp"
                 android:layout_height="112dp"
                 android:layout_below="@id/mainfood"
@@ -109,7 +109,7 @@
                 android:layout_marginStart="124dp"
                 android:layout_marginLeft="124dp"
                 android:layout_marginTop="401dp"
-                android:layout_toRightOf="@id/imageView1"
+                android:layout_toRightOf="@id/mcd1"
                 android:text="Big Mac"
                 android:textColor="@android:color/black"
                 android:textSize="20sp"
@@ -122,8 +122,8 @@
                 android:layout_below="@+id/textView1"
                 android:layout_marginStart="8dp"
                 android:layout_marginLeft="8dp"
-                android:layout_toEndOf="@+id/imageView1"
-                android:layout_toRightOf="@+id/imageView1"
+                android:layout_toEndOf="@+id/mcd1"
+                android:layout_toRightOf="@+id/mcd1"
                 android:text="- Two all-beef patties with lettuce, onions, pickles, cheese and special sauce in a toasted sesame seed bun."
                 android:textSize="15dp" />
 
@@ -139,13 +139,13 @@
                 android:layout_marginStart="135dp"
                 android:layout_marginLeft="135dp"
                 android:layout_marginTop="3dp"
-                android:text="RM10 " />
+                android:text="RM12 " />
 
-            <ImageView
-                android:id="@+id/imageView2"
+            <ImageButton
+                android:id="@+id/mcd2"
                 android:layout_width="118dp"
                 android:layout_height="112dp"
-                android:layout_below="@id/imageView1"
+                android:layout_below="@id/mcd1"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentLeft="true"
                 android:layout_marginStart="0dp"
@@ -162,7 +162,7 @@
                 android:layout_marginStart="135dp"
                 android:layout_marginLeft="135dp"
                 android:layout_marginTop="513dp"
-                android:layout_toRightOf="@id/imageView2"
+                android:layout_toRightOf="@id/mcd2"
                 android:text="Quarter Pounder with Cheese"
                 android:textColor="@android:color/black"
                 android:textSize="20sp"
@@ -175,8 +175,8 @@
                 android:layout_below="@+id/textView3"
                 android:layout_marginStart="19dp"
                 android:layout_marginLeft="19dp"
-                android:layout_toEndOf="@+id/imageView2"
-                android:layout_toRightOf="@+id/imageView2"
+                android:layout_toEndOf="@+id/mcd2"
+                android:layout_toRightOf="@+id/mcd2"
                 android:text="- It's seasoned with just a pinch of salt and pepper, sizzled on a flat iron grill, then topped with slivered onions, tangy pickles and two slices of melty cheese on a sesame seed bun.
     "
                 android:textSize="15dp" />
@@ -195,11 +195,11 @@
                 android:layout_marginTop="2dp"
                 android:text="RM12 " />
 
-            <ImageView
-                android:id="@+id/imageView3"
+            <ImageButton
+                android:id="@+id/mcd3"
                 android:layout_width="118dp"
                 android:layout_height="112dp"
-                android:layout_below="@+id/imageView2"
+                android:layout_below="@+id/mcd2"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentLeft="true"
                 android:layout_marginStart="-2dp"
@@ -217,7 +217,7 @@
                 android:layout_marginStart="144dp"
                 android:layout_marginLeft="144dp"
                 android:layout_marginTop="47dp"
-                android:layout_toRightOf="@id/imageView3"
+                android:layout_toRightOf="@id/mcd3"
                 android:text="GCB - Grilled Chicken Burger"
                 android:textColor="@android:color/black"
                 android:textSize="20sp"
@@ -231,8 +231,8 @@
                 android:layout_marginStart="21dp"
                 android:layout_marginLeft="21dp"
                 android:layout_marginTop="11dp"
-                android:layout_toEndOf="@+id/imageView3"
-                android:layout_toRightOf="@+id/imageView3"
+                android:layout_toEndOf="@+id/mcd3"
+                android:layout_toRightOf="@+id/mcd3"
                 android:text="- A delicious grilled chicken thigh, topped with crunchy iceberg lettuce and smoky chargrilled sauce, served in a toasted sesame seed bun"
                 android:textSize="15dp" />
 

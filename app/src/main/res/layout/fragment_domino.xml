@@ -75,8 +75,8 @@
 
             //domino1
 
-            <ImageView
-                android:id="@+id/imageView1"
+            <ImageButton
+                android:id="@+id/domino1"
                 android:layout_width="118dp"
                 android:layout_height="112dp"
                 android:layout_below="@id/mainfood"
@@ -95,7 +95,7 @@
                 android:layout_marginStart="124dp"
                 android:layout_marginLeft="124dp"
                 android:layout_marginTop="401dp"
-                android:layout_toRightOf="@id/imageView1"
+                android:layout_toRightOf="@id/domino1"
                 android:text="CHICKENSAURUS"
                 android:textColor="@android:color/black"
                 android:textSize="20sp"
@@ -108,8 +108,8 @@
                 android:layout_below="@+id/textView1"
                 android:layout_marginStart="8dp"
                 android:layout_marginLeft="8dp"
-                android:layout_toEndOf="@+id/imageView1"
-                android:layout_toRightOf="@+id/imageView1"
+                android:layout_toEndOf="@+id/domino1"
+                android:layout_toRightOf="@+id/domino1"
                 android:text="- Roasted Chicken, Chicken Pepperoni and Mushroom Slices on our awesome Smoky Blended BBQ Sauce (Surcharge Applies)."
                 android:textSize="15dp" />
 
@@ -127,11 +127,11 @@
 
             //mcd2
 
-            <ImageView
-                android:id="@+id/imageView2"
+            <ImageButton
+                android:id="@+id/domino2"
                 android:layout_width="118dp"
                 android:layout_height="112dp"
-                android:layout_below="@id/imageView1"
+                android:layout_below="@id/domino1"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentLeft="true"
                 android:layout_marginStart="0dp"
@@ -148,7 +148,7 @@
                 android:layout_marginStart="135dp"
                 android:layout_marginLeft="135dp"
                 android:layout_marginTop="513dp"
-                android:layout_toRightOf="@id/imageView2"
+                android:layout_toRightOf="@id/domino2"
                 android:text="ULTIMATE HAWAIIAN"
                 android:textColor="@android:color/black"
                 android:textSize="20sp"
@@ -161,8 +161,8 @@
                 android:layout_below="@+id/textView3"
                 android:layout_marginStart="19dp"
                 android:layout_marginLeft="19dp"
-                android:layout_toEndOf="@+id/imageView2"
-                android:layout_toRightOf="@+id/imageView2"
+                android:layout_toEndOf="@+id/domino2"
+                android:layout_toRightOf="@+id/domino2"
                 android:text="- Loads of delicious roasted chicken, shredded chicken juicy pineapples and fresh mushrooms on our brand new pizza."
                 android:textSize="15dp" />
 
@@ -180,11 +180,11 @@
 
             //mcd3
 
-            <ImageView
-                android:id="@+id/imageView3"
+            <ImageButton
+                android:id="@+id/domino3"
                 android:layout_width="118dp"
                 android:layout_height="112dp"
-                android:layout_below="@+id/imageView2"
+                android:layout_below="@+id/domino2"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentLeft="true"
                 android:layout_marginStart="-2dp"
@@ -202,7 +202,7 @@
                 android:layout_marginStart="144dp"
                 android:layout_marginLeft="144dp"
                 android:layout_marginTop="47dp"
-                android:layout_toRightOf="@id/imageView3"
+                android:layout_toRightOf="@id/domino3"
                 android:text="MEATASAURUS"
                 android:textColor="@android:color/black"
                 android:textSize="20sp"
@@ -216,8 +216,8 @@
                 android:layout_marginStart="21dp"
                 android:layout_marginLeft="21dp"
                 android:layout_marginTop="11dp"
-                android:layout_toEndOf="@+id/imageView3"
-                android:layout_toRightOf="@+id/imageView3"
+                android:layout_toEndOf="@+id/domino3"
+                android:layout_toRightOf="@+id/domino3"
                 android:text="- Generous portions of everyone's favorite beef pepperoni, ground beef and fresh mushrooms on our new blended smoky BBQ sauce (Surcharge Applies)"
                 android:textSize="15dp" />
 
