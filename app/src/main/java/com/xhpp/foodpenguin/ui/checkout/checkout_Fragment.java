@@ -25,6 +25,8 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.google.firebase.firestore.QuerySnapshot;
 import com.xhpp.foodpenguin.R;
 import com.xhpp.foodpenguin.ui.Order;
 import com.xhpp.foodpenguin.ui.account.AccountViewModel;
@@ -44,10 +46,10 @@ public class checkout_Fragment extends Fragment implements View.OnClickListener{
     FirebaseAuth fAuth;
     RadioButton wallet_amount;
     int price = 15;
+    int orderCount = 0;
 
     public View onCreateView(@NonNull LayoutInflater inflater, @NonNull ViewGroup container, @NonNull Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_checkout_fragment, container, false);
-        getActivity().getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN);
         Calendar c = Calendar.getInstance();
 
         back = view.findViewById(R.id.back);
@@ -88,8 +90,9 @@ public class checkout_Fragment extends Fragment implements View.OnClickListener{
                     String formattedDate = df.format(c.getTime());
                     String shopName = " ";
                     String userId = fAuth.getCurrentUser().getUid();
-                    Order order = new Order(userId, null, shopName, formattedDate, 15);
-                    db.collection("orders").add(order);
+                    String orderId = "OD" + String.format("%06d",orderCount);
+                    Order order = new Order(userId, orderId, shopName, formattedDate, 15);
+                    db.collection("orders").document(orderId).set(order);
                     OrderFragment orderFragment = new OrderFragment();
                     FragmentManager fragmentManager2 = getFragmentManager();
                     FragmentTransaction fragmentTransaction2 = fragmentManager2.beginTransaction();
@@ -119,9 +122,21 @@ public class checkout_Fragment extends Fragment implements View.OnClickListener{
                 }
             }
         });
+
+        db.collection("orders")
+                .get()
+                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                        if (task.isSuccessful())
+                        {
+                            for (QueryDocumentSnapshot document : task.getResult())
+                            {
+                                orderCount++;
+                            }
+                        }
+                    }
+                });
     }
-
-
-
 
 }
