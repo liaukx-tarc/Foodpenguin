@@ -48,6 +48,8 @@
         <item>Cancel this product</item>
         <item>Change product by call</item>
     </string-array>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="arriving">Arriving</string>
+    <string name="picking_up">Picking-up</string>
+    <string name="preparing">Preparing</string>
+    <string name="receiving">Receiving</string>
 </resources>
