@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/mainfood"
+        android:title="Food"
+        />
+
+    <item
+        android:id="@+id/side"
+        android:title="Side Order"
+        />
+
+    <item
+        android:id="@+id/drinks"
+        android:title="Drinks"
+        />
+
+    <item
+        android:id="@+id/addon"
+        android:title="Add-on"
+        />
+</menu>

@@ -4,57 +4,67 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
-import android.widget.ListView;
-import android.widget.SearchView;
+import android.widget.ImageButton;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import com.xhpp.foodpenguin.R;
+import com.xhpp.foodpenguin.ui.food_menu.Kfc;
+import com.xhpp.foodpenguin.ui.food_menu.Mcd;
+import com.xhpp.foodpenguin.ui.food_menu.Domino;
 
-import java.util.ArrayList;
-
-public class MainFragment extends Fragment
+public class MainFragment extends Fragment implements View.OnClickListener
 {
-    SearchView mySearchView;
-    ListView myList;
+    ImageButton mcd;
+    ImageButton kfc;
+    ImageButton domino;
 
-
-    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,@Nullable Bundle savedInstanceState) {
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_main, container, false);
+        mcd = view.findViewById(R.id.mcdButton);
+        kfc = view.findViewById(R.id.kfcButton);
+        domino = view.findViewById(R.id.dominoButton);
+        kfc.setOnClickListener(this);
+        mcd.setOnClickListener(this);
+        domino.setOnClickListener(this);
 
-        mySearchView = (SearchView)view.findViewById(R.id.searchView);
-        myList = (ListView)view.findViewById(R.id.myList);
+        return view;
+    }
 
-        ArrayList<String> list = new ArrayList<>();
-        list.add("Monday");
-        list.add("Tuesday");
-        list.add("Wednesday");
-        list.add("Thursday");
-        list.add("Friday");
-        list.add("Saturday");
-        list.add("Sunday");
-        final ArrayAdapter<String> adapter = new ArrayAdapter<String>(getContext(),android.R.layout.simple_list_item_1,list);
-        myList.setAdapter(adapter);
+    public void onClick(View view)
+    {
+        switch (view.getId())
+        {
+            case R.id.kfcButton:
+                Kfc kfc = new Kfc();
+                FragmentManager fragmentManager = getFragmentManager();
+                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                fragmentTransaction.replace(((ViewGroup)getView().getParent()).getId(), kfc);
+                fragmentTransaction.commit();
+                break;
 
-        mySearchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
-            @Override
-            public boolean onQueryTextSubmit(String s) {
-                return false;
-            }
+            case R.id.mcdButton:
+                Mcd mcd = new Mcd();
+                FragmentManager fragmentManager2 = getFragmentManager();
+                FragmentTransaction fragmentTransaction2 = fragmentManager2.beginTransaction();
+                fragmentTransaction2.replace(((ViewGroup)getView().getParent()).getId(), mcd);
+                fragmentTransaction2.commit();
+                break;
 
-            @Override
-            public boolean onQueryTextChange(String s) {
-
-                adapter.getFilter().filter(s);
-                return false;
-            }
-        });
-
-        return view ;
+            case R.id.dominoButton:
+                Domino domino = new Domino();
+                FragmentManager fragmentManager3= getFragmentManager();
+                FragmentTransaction fragmentTransaction3 = fragmentManager3.beginTransaction();
+                fragmentTransaction3.replace(((ViewGroup)getView().getParent()).getId(), domino);
+                fragmentTransaction3.commit();
+                break;
+        }
     }
 
 }
+
+
