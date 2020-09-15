@@ -45,8 +45,8 @@
 
     <ImageButton
         android:id="@+id/edit"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
         android:background="@android:color/transparent"
         android:src="@drawable/ic_edit"
         android:scaleType="fitCenter"
@@ -58,8 +58,8 @@
 
     <ImageButton
         android:id="@+id/cancel"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
         android:background="@android:color/transparent"
         android:src="@drawable/ic_cancel"
         android:visibility="gone"
@@ -73,8 +73,8 @@
 
     <ImageButton
         android:id="@+id/save"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
         android:background="@android:color/transparent"
         android:src="@drawable/ic_save"
         android:visibility="gone"

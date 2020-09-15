@@ -36,7 +36,8 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.OrderViewHol
     public void onBindViewHolder(OrderAdapter.OrderViewHolder holder, int position)
     {
         holder.shop_name.setText(orderList.get(position).getShop_name());
-        holder.total_price.setText(String.valueOf(orderList.get(position).getTotal_price()));
+        String total_priceString = "RM"+String.format("%.2f", orderList.get(position).getTotal_price());
+        holder.total_price.setText(total_priceString);
         holder.date.setText(orderList.get(position).getDate());
         holder.id.setText(orderList.get(position).getId());
     }
