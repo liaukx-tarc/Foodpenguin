@@ -72,8 +72,8 @@
 
             //kfc1
 
-            <ImageView
-                android:id="@+id/imageView1"
+            <ImageButton
+                android:id="@+id/kfc1"
                 android:layout_width="118dp"
                 android:layout_height="112dp"
                 android:layout_below="@id/mainfood"
@@ -92,7 +92,7 @@
                 android:layout_marginStart="124dp"
                 android:layout_marginLeft="124dp"
                 android:layout_marginTop="401dp"
-                android:layout_toRightOf="@id/imageView1"
+                android:layout_toRightOf="@id/kfc1"
                 android:text="3-PC CHEEZY CHEEZY COMBO"
                 android:textColor="@android:color/black"
                 android:textSize="20sp"
@@ -105,8 +105,8 @@
                 android:layout_below="@+id/textView1"
                 android:layout_marginStart="8dp"
                 android:layout_marginLeft="8dp"
-                android:layout_toEndOf="@+id/imageView1"
-                android:layout_toRightOf="@+id/imageView1"
+                android:layout_toEndOf="@+id/kfc1"
+                android:layout_toRightOf="@+id/kfc1"
                 android:text="- 3 pieces of chicken, cheezy wedges, whipped potato, drink"
                 android:textSize="15dp" />
 
@@ -120,15 +120,15 @@
                 android:layout_marginStart="127dp"
                 android:layout_marginLeft="127dp"
                 android:layout_marginTop="2dp"
-                android:text="RM15 " />
+                android:text="RM12 " />
 
             //mcd2
 
-            <ImageView
-                android:id="@+id/imageView2"
+            <ImageButton
+                android:id="@+id/kfc2"
                 android:layout_width="118dp"
                 android:layout_height="112dp"
-                android:layout_below="@id/imageView1"
+                android:layout_below="@id/kfc1"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentLeft="true"
                 android:layout_marginStart="0dp"
@@ -145,7 +145,7 @@
                 android:layout_marginStart="135dp"
                 android:layout_marginLeft="135dp"
                 android:layout_marginTop="516dp"
-                android:layout_toRightOf="@id/imageView2"
+                android:layout_toRightOf="@id/kfc2"
                 android:text="SIGNATURE BOX"
                 android:textColor="@android:color/black"
                 android:textSize="20sp"
@@ -158,8 +158,8 @@
                 android:layout_below="@+id/textView3"
                 android:layout_marginStart="19dp"
                 android:layout_marginLeft="19dp"
-                android:layout_toEndOf="@+id/imageView2"
-                android:layout_toRightOf="@+id/imageView2"
+                android:layout_toEndOf="@+id/kfc2"
+                android:layout_toRightOf="@+id/kfc2"
                 android:text="- 1 piece of chicken, Zinger burger, fries, drink."
                 android:textSize="15dp" />
 
@@ -173,15 +173,15 @@
                 android:layout_marginStart="127dp"
                 android:layout_marginLeft="127dp"
                 android:layout_marginTop="2dp"
-                android:text="RM13 " />
+                android:text="RM12 " />
 
             //mcd3
 
-            <ImageView
-                android:id="@+id/imageView3"
+            <ImageButton
+                android:id="@+id/kfc3"
                 android:layout_width="118dp"
                 android:layout_height="112dp"
-                android:layout_below="@+id/imageView2"
+                android:layout_below="@+id/kfc2"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentLeft="true"
                 android:layout_marginStart="-2dp"
@@ -199,7 +199,7 @@
                 android:layout_marginStart="136dp"
                 android:layout_marginLeft="136dp"
                 android:layout_marginTop="73dp"
-                android:layout_toRightOf="@id/imageView3"
+                android:layout_toRightOf="@id/kfc3"
                 android:text="STACKER BOX"
                 android:textColor="@android:color/black"
                 android:textSize="20sp"
@@ -213,8 +213,8 @@
                 android:layout_marginStart="21dp"
                 android:layout_marginLeft="21dp"
                 android:layout_marginTop="11dp"
-                android:layout_toEndOf="@+id/imageView3"
-                android:layout_toRightOf="@+id/imageView3"
+                android:layout_toEndOf="@+id/kfc3"
+                android:layout_toRightOf="@+id/kfc3"
                 android:text="- 1 piece of chicken, Zinger Stacker, fries, drink."
                 android:textSize="15dp" />
 
@@ -228,7 +228,7 @@
                 android:layout_marginStart="127dp"
                 android:layout_marginLeft="127dp"
                 android:layout_marginTop="2dp"
-                android:text="RM15 " />
+                android:text="RM12 " />
 
         </RelativeLayout>
     </ScrollView>

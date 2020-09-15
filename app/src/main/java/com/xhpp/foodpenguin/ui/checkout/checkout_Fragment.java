@@ -86,9 +86,9 @@ public class checkout_Fragment extends Fragment implements View.OnClickListener{
                     Calendar c = Calendar.getInstance();
                     SimpleDateFormat df = new SimpleDateFormat("yyyy/MM/dd");
                     String formattedDate = df.format(c.getTime());
-                    String shopName = getArguments().getString("shop");
+                    String shopName = " ";
                     String userId = fAuth.getCurrentUser().getUid();
-                    Order order = new Order(userId, "", shopName, formattedDate, 15);
+                    Order order = new Order(userId, null, shopName, formattedDate, 15);
                     db.collection("orders").add(order);
                     OrderFragment orderFragment = new OrderFragment();
                     FragmentManager fragmentManager2 = getFragmentManager();

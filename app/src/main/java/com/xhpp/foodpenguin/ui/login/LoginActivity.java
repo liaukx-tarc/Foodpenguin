@@ -47,7 +47,6 @@ public class LoginActivity extends AppCompatActivity {
         fAuth = FirebaseAuth.getInstance();
         mEmail = findViewById(R.id.emailTextInputLo);
         mPassword = findViewById(R.id.passTextInput);
-        fAuth.signOut(); //set to logout
         if(fAuth.getCurrentUser() != null)
         {
             Intent intent = new Intent(LoginActivity.this, MainActivity.class);
