@@ -12,13 +12,13 @@ import com.xhpp.foodpenguin.R;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link domino#newInstance} factory method to
+ * Use the {@link Domino#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class domino extends Fragment {
+public class Domino extends Fragment {
 
 
-    public domino() {
+    public Domino() {
         // Required empty public constructor
     }
 

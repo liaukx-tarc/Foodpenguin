@@ -100,7 +100,7 @@ public class RestaurantAdapter extends RecyclerView.Adapter<RestaurantAdapter.Re
 
     @Override
     public void onClick(View view) {
-        
+
 
     }
 

@@ -12,13 +12,13 @@ import com.xhpp.foodpenguin.R;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link kfc#newInstance} factory method to
+ * Use the {@link Kfc#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class kfc extends Fragment {
+public class Kfc extends Fragment {
 
 
-    public kfc() {
+    public Kfc() {
         // Required empty public constructor
     }
 

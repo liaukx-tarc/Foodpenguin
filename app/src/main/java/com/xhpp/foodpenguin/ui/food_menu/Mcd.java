@@ -11,10 +11,10 @@ import android.view.ViewGroup;
 import com.xhpp.foodpenguin.R;
 
 
-public class mcd extends Fragment {
+public class Mcd extends Fragment {
 
 
-    public mcd() {
+    public Mcd() {
         // Required empty public constructor
     }
 

@@ -7,58 +7,139 @@
     android:background="@color/colorBackground2"
     tools:context=".ui.main.MainFragment">
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/search"
-        android:layout_width="240dp"
+    <LinearLayout
+        android:id="@+id/KFC"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
-        app:layout_constraintRight_toLeftOf="@id/searchButton"
+        android:layout_marginTop="16dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/MCD">
+
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <ImageButton
+            android:id="@+id/kfcButton"
+            android:layout_width="270dp"
+            android:layout_height="80dp"
+            android:layout_weight="1"
+            android:scaleType="fitCenter"
+            android:src="@drawable/kfc" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/shopName2"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:text="KFC" />
+
+            <TextView
+                android:id="@+id/textView16"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Fast Food" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/MCD"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/searchText"
+        <ImageButton
+            android:id="@+id/mcdButton"
+            android:layout_width="200dp"
+            android:layout_height="80dp"
+            android:layout_weight="1"
+            android:scaleType="fitCenter"
+            android:src="@drawable/mcd" />
+
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:hint="@string/search" />
+            android:layout_weight="1"
+            android:orientation="vertical">
 
+            <TextView
+                android:id="@+id/shopName1"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:text="MCD" />
 
-    </com.google.android.material.textfield.TextInputLayout>
+            <TextView
+                android:id="@+id/textView14"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Fasr Food" />
+        </LinearLayout>
 
-    <Button
-        android:id="@+id/searchButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_weight="1"
-        android:text="@string/search"
-        app:layout_constraintBottom_toBottomOf="@+id/search"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintLeft_toRightOf="@id/search"
-        app:layout_constraintTop_toTopOf="parent" />
+    </LinearLayout>
 
-
-    <RelativeLayout
-        android:id="@+id/relativeLayout"
+    <LinearLayout
+        android:id="@+id/Domino"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="80dp"
+        android:layout_marginTop="16dp"
+        android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/search">
+        app:layout_constraintTop_toBottomOf="@+id/KFC">
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recycleView"
+        <ImageButton
+            android:id="@+id/dominoButton"
+            android:layout_width="190dp"
+            android:layout_height="80dp"
+            android:layout_weight="1"
+            android:scaleType="fitCenter"
+            android:src="@drawable/domino" />
+
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.7" />
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@android:color/darker_gray"
-            android:padding="4dp"
-            android:scrollbars="vertical" />
+            android:layout_weight="1"
+            android:orientation="vertical">
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
 
-    </RelativeLayout>
+                <TextView
+                    android:id="@+id/ShopName4"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:text="Domino" />
 
+                <TextView
+                    android:id="@+id/textView18"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Fast Food" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
